@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HMS Research Computing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+    <div class="container">
+
+<?php
+if (isset($_REQUEST['email'])) {
+  //if "email" is filled out, send email
+
+  //$mailto = "Nam_Pho@hms.harvard.edu"; // test
+  $mailto = "submit-it-ritg@rt.med.harvard.edu"; // prod actually makes a ticket
+  $email = $_REQUEST['email'] ;
+  $first_name = $_REQUEST['first_name'];
+  $last_name = $_REQUEST['last_name'];
+  $ecommons = $_REQUEST['ecommons'];
+  $subject = "New Orchestra HPC user: ".$first_name." ".$last_name."(".$ecommons.")";
+  $group = $_REQUEST['group'];
+  $research = $_REQUEST['research'];
+  $storage = $_REQUEST['storage'];
+  $compute = $_REQUEST['compute'];
+  $software = $_REQUEST['software'];
+
+  $message = "This ticket was submitted via http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "
+
+-------------------------------------------------------------------------------
+Requestor's contact information:
+
+        $first_name $last_name	<$email>
+        Group:\t\t$group
+-------------------------------------------------------------------------------
+
+eCommons ID
+(If you don't have an ID, HMS Affililates can usually self-register via the
+eCommons website. If you are not eligible to self-register, enter \"none\"
+here and we will help you obtain one via your HMS-affiliated sponsor.)
+
+$ecommons
+
+Research summary: Please briefly describe the research for which you would
+like to use the Orchestra cluster.
+
+$research
+
+Data storage estimate: Please estimate the amount of data you would need to
+store on Orchestra's fileserver -- immediately, 6 months from now, and a
+year from now. Please consider only the data that would be needed to be
+directly accessible by the cluster and assume that you would remove data
+that is no longer needed.
+
+$storage
+
+Computational resource usage estimate: Please estimate how long a typical
+job you would run on Orchestra would take and how many jobs per week you
+might typically run. For example, a job might take 3 hours to run on a
+single CPU box and you have 10 such jobs per week you would like to run.
+
+$compute
+
+Software requirements: Please list the specific software packages that you
+will need installed on Orchestra for your research.
+
+$software
+
+";
+
+  //print($message);
+
+  // actually mail out the converted form  
+  mail($mailto, $subject, $message, "From:" . $email);
+  
+  echo "
+   	<h1>Orchestra New User Account Request</h1>
+    	<br />
+	<p>You can close this window; you will get an e-mail with your ticket number shortly.</p>
+	<br />
+	<p>Thank you for using our web form.</p>
+	<br />
+	<p> -- HMS Research Computing </p>
+  ";
+
+  //print_r(array_values(get_defined_vars())); // debug
+
+  } else {
+  //if "email" is not filled out, display the form
+
+  echo "
+	<form method='post' action='' class='form-horizontal'>
+	<div class='form-group'>
+	  <div class='col-offset-2 col-sm-offset-2 col-lg-offset-2'>
+	    <h1>Orchestra New User Account Request</h1>
+	  </div>
+	</div>
+        <div class='form-group'>
+          <label for='name' class='col-lg-2 control-label'>Name</label>
+          <div class='col-3 col-sm-3 col-lg-3'>
+            <input name='first_name' id='first_name' type='text' class='form-control' placeholder='First Name'>
+          </div>
+          <div class='col-3 col-sm-3 col-lg-3'>
+            <input name='last_name' id='last_name' type='text' class='form-control' placeholder='Last Name'>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label for='ecommons' class='col-lg-2 control-label'>eCommons</label>
+          <div class='col-6 col-sm-6 col-lg-6'>
+            <input name='ecommons' id='ecommons' type='text' class='form-control' placeholder='Your eCommons ID'>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label for='email' class='col-lg-2 control-label'>Email</label>
+          <div class='col-6 col-sm-6 col-lg-6'>
+            <input name='email' id='email' type='text' class='form-control' placeholder='Your Email Address'>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label for='group' class='col-lg-2 control-label'>Group</label>
+          <div class='col-6 col-sm-6 col-lg-6'>
+            <input name='group' id='group' type='text' class='form-control' placeholder='Your Group, Lab, or Affiliated Organization'>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label for='research' class='col-lg-2 control-label'>Research Summary</label>
+          <div class='col-6 col-sm-6 col-lg-6'>
+            <textarea name='research' id='research' type='text' rows='5' class='form-control' placeholder='Please briefly describe the research for which you would like to use the Orchestra cluster.'></textarea>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label for='storage' class='col-lg-2 control-label'>Storage</label>
+          <div class='col-6 col-sm-6 col-lg-6'>
+            <textarea name='storage' id='storage' type='text' rows='5' class='form-control' placeholder='Please estimate the amount of data you would need to store on the Orchestra fileserver -- immediately, 6 months from now, and a year from now. Please consider only the data that would be needed to be directly accessible by the cluster and assume that you would remove data that is no longer needed.'></textarea>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label for='compute' class='col-lg-2 control-label'>Compute</label>
+          <div class='col-6 col-sm-6 col-lg-6'>
+            <textarea name='compute' id='compute' type='text' rows='5' class='form-control' placeholder='Please estimate how long a typical job you would run on Orchestra would take and how many jobs per week you might typically run. For example, a job might take 3 hours to run on a single CPU box and you have 10 such jobs per week you would like to run.'></textarea>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label for='software' class='col-lg-2 control-label'>Software</label>
+          <div class='col-6 col-sm-6 col-lg-6'>
+            <textarea name='software' id='software' type='text' rows='5' class='form-control' placeholder='Please list the specific software packages that you will need installed on Orchestra for your research.'></textarea>
+          </div>
+        </div>
+	<br />
+	<div class='form-group'>
+	  <div class='col-offset-4 col-sm-offset-4 col-lg-offset-4'>
+	    <button type='submit' class='btn btn-default'>Submit</button>
+	  </div>
+	</div>
+	</form>
+  ";
+  }
+?>
+
+    <!-- JavaScript plugins (requires jQuery) -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+  </div>
+  </body>
+</html>
+

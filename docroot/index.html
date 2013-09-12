@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Harvard Medical School Research Computing</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet"> <!-- boostrap 3 min from stock -->
+    <!--<link href="css/bootrap.css" rel="stylesheet"> <!-- bootstrap 3 min from glyph -->
+    
+    <!-- somehow this is v2.3.2 legacy -->
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/bootstrap-glyphicons.css" rel="stylesheet" media="screen">
+
+    <style>
+	img.profile { 
+		width: 100px;
+		height: 100px;
+		border: 1px solid black;
+	}
+
+	.section { 
+		text-align: center;
+	}
+
+	.choose {
+		padding-left: 30%;
+	}
+
+	.crop { 
+		width: 100%;
+		height: 400px;
+		overflow: hidden;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+	}
+
+	img.slider { 
+		width: 100%;
+		display: block;
+		position: relative;
+		top: -300px;
+	}
+
+	.alphacap {
+		opacity:0.4;
+		filter:alpha(opacity=40); /* For IE8 and earlier */
+	}
+    </style>
+
+    <!-- GA by np106 -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-42939530-1', 'harvard.edu');
+      ga('send', 'pageview');
+    </script>
+
+  </head>
+
+  <body>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="col-12">
+        <img src="img/hms_logo.jpg" style="width: 75px; float: left; padding-top: 20px; padding-right: 10px;" />
+        <h3>Harvard Medical School <br /> Research Computing</h3>
+      </div>
+    </div>
+
+    <br />
+    
+    <div class="row navbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#" class="btn btn-large"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a href="#projects" class="btn btn-large"><span class="glyphicon glyphicon-list-alt"></span> Projects</a></li>
+	<li><a href="#support" class="btn btn-large"><span class="glyphicon glyphicon-thumbs-up"></span> Support</a></li>
+        <li><a href="#people" class="btn btn-large"><span class="glyphicon glyphicon-user"></span> People</a></li>
+        <li><a href="#downloads" class="btn btn-large"><span class="glyphicon glyphicon-download-alt"></span> Downloads</a></li>
+        <li><a href="#about" class="btn btn-large"><span class="glyphicon glyphicon-question-sign"></span> About</a></li>
+        <li><a href="#contact" class="btn btn-large"><span class="glyphicon glyphicon-map-marker"></span> Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- cool slider area -->
+
+    <div class="row">
+
+      <!-- start carousel -->
+      <div id="carousel-example-generic" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+          <!-- picture 1 -->
+          <div class="item crop active">
+            <img src="img/new_user.png" alt="" class="slider" />
+            <div class="carousel-caption">
+              <h1>Newly created user?</h1>
+              <p>Here are answers to some common asked questions to help you get started...</p>
+              <p>
+      	      <a class="btn btn-large btn-primary" href="https://wiki.med.harvard.edu/Orchestra/TechnicalSpecifications" target="_blank">FAQ</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- picture 2 -->
+          <div class="item crop">
+            <img src="img/hdd.jpg" alt="" class="slider" />
+            <div class="carousel-caption">
+              <h1>Questions about the recent storage problems?</h1>
+              <p>In case you haven't been keeping up with our announcements, we've kept them all in one place for review.</p>
+              <p>
+              <a class="btn btn-large btn-primary" href="https://wiki.med.harvard.edu/Orchestra/OrchestraStorageOutageJuly2013" target="_blank">Storage Crisis 2013</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- picture 3 -->
+          <div class="item crop">
+            <img src="img/new_lab.png" alt="" class="slider" />
+              <div class="carousel-caption">
+                <h1>Bootstrap 3 Carousel Layout</h1>
+                <p>This is an example layout with carousel that uses the Bootstrap 3 styles.
+                <a title="Bootstrap 3" href="http://getbootstrap.com" class="">Bootstrap 3 RC 1 is now available!</a></p>
+                <p><a class="btn btn-large btn-primary" href="#">Sign up today</a>
+                </p>
+              </div>
+          </div>
+
+          <!-- picture 4 -->
+          <div class="item crop">
+            <img src="img/ddn.jpg" alt="" class="slider" />
+            <div class="carousel-caption">
+              <h1>High-performance Computing</h1>
+              <p>The Orchestra HPC is ~500 nodes with ~2 Pb network attached storage.</p>
+              <p>
+              <a class="btn btn-large btn-primary" href="https://wiki.med.harvard.edu/Orchestra/TechnicalSpecifications" target="_blank">Tech Specs</a>
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+      <!-- end carousel -->
+
+    </div> <!-- close row -->
+
+    <br />
+
+    <!-- STATUS AREA -->
+    <a name="status"></a>
+    <h1 class="section"><span class="glyphicon glyphicon-wrench"></span> Status</h1>
+
+	<br />
+
+      <div class="row">
+        <div class="col-6 col-sm-6 col-lg-6">
+	  <img src="http://dev.monitor.orchestra.med.harvard.edu/graph.php?me=HMS%20Research%20Computing&amp;m=load_one&amp;r=hour&amp;s=by%20name&amp;hc=4&amp;mc=2&amp;g=load_report&amp;z=medium" alt="HMS Research Computing Grid (6 sources) LOAD" border="0" style="width: 100%;">
+	</div>
+
+        <div class="col-6 col-sm-6 col-lg-6">
+<p>
+<a class="twitter-timeline" href="https://twitter.com/hms_rc" data-widget-id="363733306275160064" height="300">Tweets by @hms_rc</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</p>
+	</div>
+      </div>
+
+
+
+    <br /><hr /><br />
+
+
+
+    <!-- PROJECTS AREA -->
+    <a name="projects"></a>
+    <h1 class="section"><span class="glyphicon glyphicon-list-alt"></span> Projects</h1>
+
+	<br />
+
+      <div class="row">
+        <div class="col-6 col-sm-6 col-lg-6">
+          <h4><span class="glyphicon glyphicon-dashboard"></span> Job Handling</h4>
+          <p>The cluster an a shared HPC environment serving a research community with diverse research requirements and workflows. 
+		Every hour thousands of jobs are submitted and we are constantly improving the job handling software to 
+		balance through-put and research productivity on this finite resource.
+	  </p>
+
+          <h4><span class="glyphicon glyphicon-hdd"></span> Storage</h4>
+          <p>The thousands of researchers we support generate a tremendous amount of data. Some of our group resources 
+		and time go towards evaluating future storage products for cost, performance, and suitability for our 
+		researchers. 
+	  </p>
+	  <p>We are currently at approximately 2-3 Petabytes of network attached storage through ethernet but are 
+		evaluating cutting edge distributed file systems such as LUSTRE. The new scratch space is an example 
+		of our efforts in this area and the hardware has been benchmarked for higher IOPS compared to our other 
+		storage tiers.
+	  </p>
+        </div>
+
+        <div class="col-6 col-sm-6 col-lg-6">
+          <h4><span class="glyphicon glyphicon-globe"></span> Cloud Computing</h4>
+          <p>The computational resources needed by our community wax and wane with the academic year and the funding 
+		deadlines. We are looking towards the future and evaluating cloud computing as a possible solution to 
+		provide surge compute capacity during times of high need.
+	  </p>
+
+          <h4><span class="glyphicon glyphicon-book"></span> Classes</h4>
+          <p>Members of our group are also pro-active in the Quad community and teach classes from time to time. This 
+		has ranged from introductory UNIX to Perl/BioPerl as well a more specific introduction to our 
+		cluster, Orchestra. We have slides from previous classes available.
+	  </p>
+
+          <h4><span class="glyphicon glyphicon-user"></span> Consulting</h4>
+          <p>Have a research problem and not sure how to tackle it? Contact us and have one of our research computing 
+		consultants chat with you. Consultants have a life science background and can meet with you one-on-one 
+		to help you figure out how to use computers effectively in your research or to help you get access 
+		to the resources you need.</p>
+        </div>
+      </div>
+
+
+
+    <br /><hr /><br />
+
+
+
+    <!-- SUPPORT AREA -->
+    <a name="support"></a>
+    <h1 class="section"><span class="glyphicon glyphicon-thumbs-up"></span> Support</h1>
+
+	<br />
+
+      <div class="row">
+        <div class="col-6 col-sm-6 col-offset-3 col-sm-offset-3">
+        <p>
+	If you already have an account on our Orchestra cluster then there are a few ways in which you can get a hold of us for support. You can either 
+	(1) fill out a web form with detailed information about your issue, (2) send us a quick e-mail message, or (3) just visit us in person and 
+	tell/ask us.
+	</p>
+	<p>
+	The exception to this, of course, is if you do not have an account yet in which case you need to fill out a separate form <a href="account.html" target="_blank">here</a>.
+	</p>
+        </div>
+      </div>
+
+      <br />
+
+    <div class="row">
+      <div class="col-6 col-sm-4 col-lg-4">
+	<span class="choose">
+	<a class="btn btn-large btn-success" href="support.html" target="_blank">Form</a>
+	</span>
+      </div>
+      <div class="col-6 col-sm-4 col-lg-4">
+	<span class="choose">
+        <a class="btn btn-large btn-success" href="mailto:rchelp@hms.harvard.edu">E-mail</a>
+	</span>
+      </div>
+      <div class="col-6 col-sm-4 col-lg-4">
+	<span class="choose">
+        <a class="btn btn-large btn-success" href="#contact">Visit</a>
+	</span>
+      </div>
+    </div>
+
+
+
+    <br /><hr /><br />
+
+
+
+    <!-- PEOPLE AREA -->
+    <a name="people"></a>
+    <h1 class="section"><span class="glyphicon glyphicon-user"></span> People</h1>
+
+	<br />
+
+      <div class="row">
+        <div class="col-6 col-sm-6 col-lg-6 col-offset-3 col-sm-offset-3 col-lg-offset-3">
+	<p>We are a small team dedicated to promoting and maintaining the use of HPC in the research community. Meet some 
+		of our members below.
+	</p>
+        </div>
+      </div>
+
+      <br />
+
+      <!-- ROW 1 -->
+      <div class="row">
+        <div class="col-6 col-sm-4 col-lg-4">
+		<img src="img/andy.png" class="profile img-circle" />
+		<h4>Andy</h4>
+		<i>Systems Administrator</i>
+		<p>New user?</p>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-4">		
+		<img src="img/doug.png" class="profile img-circle" />
+                <h4>Doug</h4>
+		<i>Senior Research Systems Architect</i>
+                <p>Doug previously designed and maintained scalable web infrastructure before coming to HMS.</p>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-4">
+		<img src="img/peter.png" class="profile img-circle" />
+                <h4>Peter</h4>
+		<i>LSF Extraordinaire</i>
+                <p>I climb large rocks and love killing your inefficient jobs.</p>
+        </div>
+      </div>
+
+      <!-- ROW 2 -->
+      <div class="row">
+        <div class="col-6 col-sm-4 col-lg-4">
+		<img src="img/amir.gif" class="profile img-circle" />
+                <h4>Amir</h4>
+                <i>Senior Research Computing Consultant</i>
+		<p>I like to PERL things and chat with our researchers about their [science] problems.</p>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-4">
+		<img src="img/greg.png" class="profile img-circle" />
+                <h4>Greg</h4>
+		<i>Senior Research Computing Consultant</i>
+                <p>Ask me for more storage quota. Kua gai.</p>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-4">
+		<img src="img/chris.gif" class="profile img-circle" />
+                <h4>Chris</h4>
+		<i>Director of Research Computing</i>
+                <p>I strategically visualize things. Ask me about the future of Orchestra. Suggestions welcome.</p>
+	</div>
+      </div>
+
+      <div class="row">
+        <div class="col-6 col-sm-4 col-lg-4">
+		<img src="img/nam.jpg" class="profile img-circle" />
+                <h4>Nam</h4>
+		<i>Research Computing Consultant</i>
+                <p>I compile poorly written bioinformatics software.</p>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-4">
+                <img src="img/david.png" class="profile img-circle" />
+                <h4>David Hummel</h4>
+                <i>Senior DevOps Engineer</i>
+                <p>Previously worked as a molecular biologist, bioinformatician and software developer.  Now designs scalable and maintainable research computing infrastructure, both physical and virtual.</p>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-4">
+                <img src="img/tom.gif" class="profile img-circle" />
+                <h4>Tom</h4>
+                <i>Seniors Biostatistics Consultant</i>
+                <p>Tom Chittenden's overall research objective is to understand how genetic variation and somatic mutation regulate aberrant 
+gene activity and subsequent disease biology.</p>
+        </div>
+      </div>
+	
+      <div class="row">
+        <div class="col-6 col-sm-4 col-lg-4">
+		<img src="img/new.jpg" class="profile img-circle" />
+                <h4>This Could Be You</h4>
+		<i>Senior Research Computing Consultant</i>
+                <p>We are currently hiring for this role...must love P-card lunches and providing therapy to our research community.</p>
+        </div>
+      </div>
+
+
+
+      <br /><hr /><br />
+
+
+
+    <!-- DOWNLOADS AREA -->
+    <a name="downloads"></a>
+    <h1 class="section"><span class="glyphicon glyphicon-download-alt"></span> Downloads</h1>
+
+	<br />
+
+    <div class="row">
+      <div class="col-8 col-sm-8 col-lg-8 col-offset-2 col-sm-offset-2 col-lg-offset-2">
+	<p>We do have some code available through our <a href="https://github.com/hmsrc">Github</a>.</p>
+
+	<p>For a list of research applications installed on the Orchestra HPC cluster, click <a href="https://wiki.med.harvard.edu/Orchestra/InstalledApplications">here</a>.
+	</p>
+
+	<p>The following licensed desktop research applications are distributed by research computing; <b>all downloads 
+	require <a href="https://ecommons.med.harvard.edu/">HMS eCommons ID authentication</a></b>. Please 
+	note that the <a href="https://affinity.med.harvard.edu/">HMS Affinity ID</a> and Harvard PIN will 
+	not work for this.</p>
+
+	<ul>
+	<li><b><a href="http://www.cambridgesoft.com/">ChemOffice</a></b> is a suite of chemistry tools available to all Quad-based faculty, staff, and students of HMS/HSDM, and licensed for use on or off the HMS network.
+	   [<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#ChemOffice">installation notes</a>]
+	</li>
+
+	<li><b><a href="http://www.geneious.com/">Geneious</a></b> is a bioinformatics software platform that is licensed for use on the Harvard Medical School network.
+		[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#Geneious">installation notes</a>]
+	</li>
+	<li><b><a href="http://www.jmp.com/">JMP</a></b> is statistical discovery software that is licensed to all members and affiliates of Harvard Medical School.
+		[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#JMP">download page</a>]
+	</li>
+	<li><b><a href="http://www.jmp.com/">JMP Genomics</a></b>
+	 	[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#JMP_Genomics">info</a>] 
+	</li>
+	<li><b><a href="http://www.dnastar.com/">Lasergene</a></b> is a suite of sequence analysis software by DNAStar for Windows and Mac, with analysis tools including alignments, contig assembly, gene discovery, primer design, restriction mapping, protein structure prediction, and more. Lasergene is available to all Quad-based faculty, staff, and students of HMS/HSDM/HSPH, and licensed for use on the HMS network. Quad-based users may also run Lasergene offsite using the HMS VPN system. Please contact the HMS IT Helpdesk at 617-432-2000 or email <a href=mailto:"Help_Desk@hms.harvard.edu">Help_Desk@hms.harvard.edu</a> to register for VPN.
+		[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#Lasergene_DNAStar">download page</a>]
+	</li>
+	<li><b><a href="http://www.wolfram.com/">Mathematica</a></b> is licensed to all members and affiliates of Harvard University. Mathematica can also be run on the Orchestra HPC in addition to the desktop versions.
+		[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#Mathematica">download page</a>]
+	</li>
+	<li><b><a href="http://www.mathworks.com/">MATLAB</a></b> is available under a site license to all Quad-based faculty, staff, and students of HMS. Harvard FAS users <a href="http://www.fas-it.fas.harvard.edu/node/1228">can obtain MATLAB from FAS directly</a>. <b>Members of HMS affiliates, such as MGH, BIDMC, Children's Hospital, etc., should seek MATLAB licensing through their primary institution</b>. MATLAB can also be run on the Orchestra HPC in addition to the desktop versions.
+		[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#MATLAB">download page</a>]
+	</li>
+	</ul>
+
+	<p>See the <a href="https://wiki.med.harvard.edu/Software/">HMS Software Wiki</a> for links to other Harvard organizations with software licensing resources.
+	</p>
+
+      </div>
+    </div
+
+
+
+    <br /><hr /><br />
+
+
+
+    <!-- ABOUT AREA -->
+    <a name="about"></a>
+    <h1 class="section"><span class="glyphicon glyphicon-question-sign"></span> About</h1>
+
+	<br />
+
+    <div class="row">
+      <div class="col-6 col-sm-6 col-offset-3 col-sm-offset-3">
+	<b>Helping beginners and experts get research done on computers.</b>
+	<p>
+	Computational research is an increasingly important part of any life science research project. Research computing staff help researchers get access to software and hardware resources and provide advice on how to use those resources. Ask us big or small, beginner or expert questions.
+	</p>
+
+	<p>We can help you with things like...
+	<ul>
+	<li>access an HPCC (high-performance compute cluster) to analyze data,</li>
+	<li>install or use a particular bioinformatics program,</li>
+	<li>make your programs run faster,</li>
+	<li>reformat data so that a particular program will read it,</li>
+	<li>run MPI parallel jobs on a cluster,</li>
+	<li>run Matlab or Mathematica interactively or in batch,</li>
+	<li>download exon sequences for genes, with 100 bp on either side,</li>
+	<li>run your analysis 5000+ times using a simple script, or</li>
+	<li>get terabytes of backed-up storage for next-gen sequence analysis.</li>
+	</ul>
+	</p>
+
+	<p>
+	Research computing consultants with a life science background can talk with you about your project, help you decide an effective strategy for the computational part of your research, and acting as liaisons to other parts of IT to access the necessary resources. If we can't help with a particular problem, we'll try to find somebody who can.
+	</p>
+
+	<p>All services are offered <b>free of charge</b>.</p>
+
+	<br />
+
+	<h4 class="section"><span class="glyphicon glyphicon-music"></span> Orchestra <span class="glyphicon glyphicon-music"></span></h4>
+	<p>
+	Orchestra is a shared high-performance computing (HPC) environment maintained by our group. It has approximately 
+	500 compute nodes and roughly 2-3 Petabytes of network attached storage. Although it was originally designed to 
+	enable computationally intensive biomedical research it also as evolved into other IT solutions including web 
+	hosting. You can read more about the Orchestra hardware <a href="https://wiki.med.harvard.edu/Orchestra/TechnicalSpecifications">here</a>.
+	</p>
+
+	<br />
+
+	<h4 class="section">History</h4>
+	<p>
+	By recommendation of the CIO, The Research Information Technology Group (RITG) was founded in July 2003 by the Information Technology department to support research computing on the Quad that falls beyond the scope of local system administrators or the existing HMS IT department's desktop support.
+	</p>
+	<p>
+	Besides providing direct research IT support to the Department of Systems Biology and augmenting research IT support on the Quad, RITG works with other departmental administrators to pool resources, efforts, and expertise. Our goal is to foster collaboration within the community of systems administrators at HMS to share knowledge and establish common best practices.
+	</p>
+
+
+      </div>
+    </div>
+
+    <br /><hr /><br />
+
+    <!-- CONTACT AREA -->
+    <a name="contact"></a>
+    <h1 class="section"><span class="glyphicon glyphicon-map-marker"></span> Contact</h1>
+
+	<br />
+
+    <div class="row">
+      <div class="col-6 col-sm-6 col-lg-6">
+	<p>
+	<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=25+Shattuck+Street,+Boston,+MA&amp;aq=0&amp;oq=25+shattuck&amp;sll=42.31435,-70.970284&amp;sspn=0.319372,0.727158&amp;ie=UTF8&amp;hq=&amp;hnear=25+Shattuck+St,+Boston,+Suffolk,+Massachusetts+02115&amp;t=m&amp;z=14&amp;ll=42.335509,-71.104369&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=25+Shattuck+Street,+Boston,+MA&amp;aq=0&amp;oq=25+shattuck&amp;sll=42.31435,-70.970284&amp;sspn=0.319372,0.727158&amp;ie=UTF8&amp;hq=&amp;hnear=25+Shattuck+St,+Boston,+Suffolk,+Massachusetts+02115&amp;t=m&amp;z=14&amp;ll=42.335509,-71.104369" style="color:#0000FF;text-align:left;">View Larger Map</a></small>
+	</p>
+      </div>
+
+      <div class="col-6 col-sm-6 col-lg-6">
+	<p>
+	You are more than welcome to visit us at the following address at any time. However, we may not always 
+	be there so it's best to send us an e-mail to confirm first. We do have weekly office hours on Wednesdays 
+	from 1-3pm where we're more likely to be around and you can stop by and chat about anything.
+
+        <address>
+          HMS Research Computing<br />
+          Gordon Hall<br />
+          25 Shattuck Street #500 <br />
+          Boston, MA 02115<br />
+          <span class="glyphicon glyphicon-phone"></span> (617) 432-2306 <br />
+          <span class="glyphicon glyphicon-envelope"></span> <a href="mailto:rchelp@hms.harvard.edu">rchelp@hms.harvard.edu</a>
+        </address>
+
+	We also have a fledgling online social presence on 
+		<a href="https://twitter.com/hms_rc">Twitter</a>, 
+		<a href="https://www.facebook.com/HMSResearchComputing">Facebook</a>, and 
+		<a href="https://github.com/hmsrc">Github</a>.
+	</p>
+      </div>
+    </div>
+
+    <!-- FOOTER AREA -->
+    <div class="row" style="background: #d7e2ea;">
+      <br />
+
+        <div class="col-6 col-sm-4 col-lg-4">
+	<strong><span class="glyphicon glyphicon-map-marker"></span> Contact</strong>
+
+	<address>
+	  HMS Research Computing<br />
+	  Gordon Hall<br />
+	  25 Shattuck Street #500 <br />
+	  Boston, MA 02115<br />
+	  <abbr title="Phone">P:</abbr> (617) 432-2306 <br />
+	  <abbr title="Email">E:</abbr> <a href="mailto:rchelp@hms.harvard.edu">rchelp@hms.harvard.edu</a>
+	</address>
+
+	</div>
+
+        <div class="col-6 col-sm-4 col-lg-4">
+	<strong><span class="glyphicon glyphicon-time"></span> Hours</strong>
+	
+	<p>
+	24/7/365 :)
+	</p>
+	</div>
+
+        <div class="col-6 col-sm-4 col-lg-4">
+	<strong><span class="glyphicon glyphicon-link"></span> Links</strong>
+
+	<p>	
+	  <a href="http://hms.harvard.edu">Harvard Medical School</a> <br />
+	  <a href="http://rc.hms.harvard.edu">- Research Computing</a> <br />
+	  <a href="http://genome.med.harvard.edu">- Biopolymer Sequencing (BPF)</a> <br />
+	  <a href="http://idac.hms.harvard.edu">- Image Data Analysis Core (IDAC)</a> <br />
+	  <a href="http://www.sbgrid.org">- Structural Biology Grid (SBGrid)</a> <br />
+	  <a href="http://iccb.med.harvard.edu">- ICCB Screening</a> <br />
+	</p>
+	</div>
+    </div>
+
+    <div class="row">
+      <div class="footer">
+        <p class="section">Copyright &copy; 2004-2013 by the President and Fellows of Harvard College</p>
+      </div>
+    </div> <!-- /row container -->
+
+  </div> <!-- /container -->
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- my own javascript -->
+    <script>
+      $(document).ready(function(){
+    	$('.carousel').carousel();
+      });
+    </script>
+
+  </body>
+</html>
