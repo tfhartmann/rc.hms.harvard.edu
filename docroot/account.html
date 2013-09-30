@@ -35,37 +35,15 @@ Requestor's contact information:
         Group:\t\t$group
 -------------------------------------------------------------------------------
 
-eCommons ID
-(If you don't have an ID, HMS Affililates can usually self-register via the
-eCommons website. If you are not eligible to self-register, enter \"none\"
-here and we will help you obtain one via your HMS-affiliated sponsor.)
+eCommons ID: $ecommons
 
-$ecommons
+Research summary: $research
 
-Research summary: Please briefly describe the research for which you would
-like to use the Orchestra cluster.
+Data storage estimate: $storage
 
-$research
+Computational resource usage estimate: $compute
 
-Data storage estimate: Please estimate the amount of data you would need to
-store on Orchestra's fileserver -- immediately, 6 months from now, and a
-year from now. Please consider only the data that would be needed to be
-directly accessible by the cluster and assume that you would remove data
-that is no longer needed.
-
-$storage
-
-Computational resource usage estimate: Please estimate how long a typical
-job you would run on Orchestra would take and how many jobs per week you
-might typically run. For example, a job might take 3 hours to run on a
-single CPU box and you have 10 such jobs per week you would like to run.
-
-$compute
-
-Software requirements: Please list the specific software packages that you
-will need installed on Orchestra for your research.
-
-$software
+Software requirements: $software
 
 ";
 
@@ -108,7 +86,7 @@ $software
         <div class='form-group'>
           <label for='ecommons' class='col-lg-2 control-label'>eCommons</label>
           <div class='col-6 col-sm-6 col-lg-6'>
-            <input name='ecommons' id='ecommons' type='text' class='form-control' placeholder='Your eCommons ID'>
+	      <input name='ecommons' id='ecommons' type='text' class='form-control' placeholder='Your eCommons ID (e.g. ab123. Not an email address or a Harvard ID)'>
           </div>
         </div>
         <div class='form-group'>
