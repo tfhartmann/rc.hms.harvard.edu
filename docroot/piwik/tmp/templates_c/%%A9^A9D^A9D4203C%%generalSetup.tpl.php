@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2013-10-17 18:53:01
+<?php /* Smarty version 2.6.26, created on 2013-10-17 19:01:48
          compiled from Installation/templates/generalSetup.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'translate', 'Installation/templates/generalSetup.tpl', 1, false),)), $this); ?>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2013-10-17 18:51:15
+<?php /* Smarty version 2.6.26, created on 2013-10-17 19:00:41
          compiled from Installation/templates/welcome.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'translate', 'Installation/templates/welcome.tpl', 1, false),array('function', 'url', 'Installation/templates/welcome.tpl', 41, false),)), $this); ?>
