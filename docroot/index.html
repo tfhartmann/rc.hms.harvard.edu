@@ -59,22 +59,6 @@
       ga('send', 'pageview');
     </script>
 
-    <!-- Piwik -->
-    <script type="text/javascript"> 
-      var _paq = _paq || [];
-      _paq.push(['trackPageView']);
-      _paq.push(['enableLinkTracking']);
-      (function() {
-      var u=(("https:" == document.location.protocol) ? "https" : "http") + "://dev.rc.hms.harvard.edu/piwik//";
-      _paq.push(['setTrackerUrl', u+'piwik.php']);
-      _paq.push(['setSiteId', 1]);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
-      g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-      })();
-    </script>
-    <noscript><p><img src="https://rc.hms.harvard.edu/piwik/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
-    <!-- End Piwik Code -->
-
   </head>
 
   <body>
@@ -113,12 +97,26 @@
           <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
           <li data-target="#carousel-example-generic" data-slide-to="1"></li>
           <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
-          <!-- picture 1 -->
+
+          <!-- osqa first slide -->
           <div class="item crop active">
+            <img src="img/osqa.png" alt="" class="slider" />
+            <div class="carousel-caption">
+              <h1>Want to engage with your fellow Orchestra researchers?</h1>
+              <p>Check out our new crowd sourced question and answer forum...</p>
+              <p>
+      	      <a class="btn btn-large btn-primary" href="https://qa.rc.hms.harvard.edu" target="_blank">OSQA</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- picture 1 -->
+          <div class="item crop">
             <img src="img/new_user.png" alt="" class="slider" />
             <div class="carousel-caption">
               <h1>Newly created user?</h1>
