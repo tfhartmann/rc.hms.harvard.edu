@@ -1,0 +1,3 @@
+# Redirects rc links to wiki pages
+Redirect /lsf/ https://wiki.med.harvard.edu/Orchestra/IntroductionToLSF
+Redirect /faq/ https://wiki.med.harvard.edu/Orchestra/IntroductionToLSF
