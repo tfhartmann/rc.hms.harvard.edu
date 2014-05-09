@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet"> 
+    <link href="css/bootstrap-glyphicons.css" rel="stylesheet" media="screen">
+
+      <script>
+	<!--
+	window.location = 'https://rc.hms.harvard.edu/#support';
+	//-->
+      </script>
+
   </head>
   <body>
     <div class="container">
@@ -68,10 +77,17 @@ Software requirements: $software
   //if "email" is not filled out, display the form
 
   echo "
+      <noscript>
 	<form method='post' action='' class='form-horizontal'>
 	<div class='form-group'>
 	  <div class='col-offset-2 col-sm-offset-2 col-lg-offset-2'>
 	    <h1>Orchestra New User Account Request</h1>
+
+	    <div class='col-7 col-sm-7 col-lg-7 bg-warning'>
+	    <h4>Warning!</h4>
+	    <p>You have JavaScript disabled so this is a legacy form that is no longer updated, please visit <a href='https://rc.hms.harvard.edu/#support'>here</a> for the latest support.</p>
+	    </div>
+
 	  </div>
 	</div>
         <div class='form-group'>
@@ -132,6 +148,7 @@ Software requirements: $software
 	  </div>
 	</div>
 	</form>
+      </noscript>
   ";
   }
 ?>
