@@ -4,8 +4,12 @@
   <head>
     <meta charset="utf-8">
     <title>Harvard Medical School Research Computing</title>
+
+    <!-- we are using bootstrap 3.1.1 -->
+
     <link href="css/bootstrap.min.css" rel="stylesheet"> <!-- boostrap 3 min from stock -->
-    <!-- javascript added at the bottom!!! -->
+
+    <!-- javascript added at the bottom -->
 
     <!--<link href="css/bootrap.css" rel="stylesheet"> <!-- bootstrap 3 min from glyph -->
 
@@ -14,10 +18,18 @@
     <link href="css/bootstrap-glyphicons.css" rel="stylesheet" media="screen">
 
     <style>
+        .navbar {
+	        background: #eee;
+	}
+
 	img.profile { 
 		width: 100px;
 		height: 100px;
 		border: 1px solid black;
+	}
+
+	.modal-header {
+	        background: #0099FF;
 	}
 
 	.section { 
@@ -48,6 +60,10 @@
 		opacity:0.4;
 		filter:alpha(opacity=40); /* For IE8 and earlier */
 	}
+
+	.form-control-feedback {
+	        display: none;
+	}
     </style>
 
     <!-- GA by np106 -->
@@ -69,7 +85,7 @@
 
     <div class="row">
       <div class="col-12">
-        <img src="img/hms_logo.jpg" style="width: 75px; float: left; padding-top: 20px; padding-right: 10px;" />
+        <img src="img/hms_logo.jpg" style="width: 75px; float: left; padding-right: 10px;" />
         <h3>Harvard Medical School <br /> Research Computing</h3>
       </div>
     </div>
@@ -78,13 +94,13 @@
     
     <div class="row navbar">
       <ul class="nav navbar-nav">
-        <li><a href="#" class="btn btn-large"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-        <li><a href="#projects" class="btn btn-large"><span class="glyphicon glyphicon-list-alt"></span> Projects</a></li>
-	<li><a href="#support" class="btn btn-large"><span class="glyphicon glyphicon-thumbs-up"></span> Support</a></li>
-        <li><a href="#people" class="btn btn-large"><span class="glyphicon glyphicon-user"></span> People</a></li>
-        <li><a href="#downloads" class="btn btn-large"><span class="glyphicon glyphicon-download-alt"></span> Downloads</a></li>
-        <li><a href="#about" class="btn btn-large"><span class="glyphicon glyphicon-question-sign"></span> About</a></li>
-        <li><a href="#contact" class="btn btn-large"><span class="glyphicon glyphicon-map-marker"></span> Contact</a></li>
+        <li><a href="#" class="btn btn-lg"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a href="#projects" class="btn btn-lg"><span class="glyphicon glyphicon-list-alt"></span> Projects</a></li>
+	<li><a href="#support" class="btn btn-lg"><span class="glyphicon glyphicon-thumbs-up"></span> Support</a></li>
+        <li><a href="" class="btn btn-lg"><span class="glyphicon glyphicon-user"></span> People</a></li>
+        <li><a href="#downloads" class="btn btn-lg"><span class="glyphicon glyphicon-download-alt"></span> Downloads</a></li>
+        <li><a href="#about" class="btn btn-lg"><span class="glyphicon glyphicon-question-sign"></span> About</a></li>
+        <li><a href="#contact" class="btn btn-lg"><span class="glyphicon glyphicon-map-marker"></span> Contact</a></li>
       </ul>
     </div>
 
@@ -111,7 +127,7 @@
               <h1>Want to engage with your fellow Orchestra researchers?</h1>
               <p>Check out our new crowd sourced question and answer forum...</p>
               <p>
-      	      <a class="btn btn-large btn-primary" href="https://qa.rc.hms.harvard.edu" target="_blank">OSQA</a>
+      	      <a class="btn btn-lg btn-primary" href="https://qa.rc.hms.harvard.edu" target="_blank">OSQA</a>
               </p>
             </div>
           </div>
@@ -123,7 +139,7 @@
               <h1>Newly created user?</h1>
               <p>Here are answers to some common asked questions to help you get started...</p>
               <p>
-      	      <a class="btn btn-large btn-primary" href="https://wiki.med.harvard.edu/Orchestra/HPCFrequentlyAskedQuestions" target="_blank">FAQ</a>
+      	      <a class="btn btn-lg btn-primary" href="https://wiki.med.harvard.edu/Orchestra/HPCFrequentlyAskedQuestions" target="_blank">FAQ</a>
               </p>
             </div>
           </div>
@@ -135,7 +151,7 @@
               <h1>High-performance Computing</h1>
               <p>The Orchestra HPC Cluster is about 500 nodes with over 3PB network attached storage.</p>
               <p>
-              <a class="btn btn-large btn-primary" href="https://wiki.med.harvard.edu/Orchestra/TechnicalSpecifications" target="_blank">Tech Specs</a>
+              <a class="btn btn-lg btn-primary" href="https://wiki.med.harvard.edu/Orchestra/TechnicalSpecifications" target="_blank">Tech Specs</a>
               </p>
             </div>
           </div>
@@ -240,30 +256,200 @@
 
 	<!-- JS FORM -->
 
-	<div class="modal fade" id="newuserform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	  <div class="modal-dialog">
+	<!-- form ok -->
+	<div class="modal fade" id="form_ok" role="dialog" tabindex="-1">
+	  <div class="modal-dialog modal-sm">
 	    <div class="modal-content">
 	      <div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+		<h4 class="modal-title">Form Submitted</h4>
 	      </div>
 	      <div class="modal-body">
-		...
+		<p>You should receive confirmation at the e-mail address you provided shortly.</p>
 	      </div>
 	      <div class="modal-footer">
-		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		<button type="button" class="btn btn-primary">Save changes</button>
+		<button type="button" class="btn btn-primary btn-success" data-dismiss="modal">Ok</button>
 	      </div>
 	    </div>
 	  </div>
 	</div>
+	<!-- end form ok -->
+
+	<!-- new orchestra user -->
+	<div class="modal fade" id="form_register_div" role="dialog" tabindex="-1">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h4 class="modal-title">Orchestra New User Account Request</h4>
+	      </div>
+	      <div class="modal-body">
+
+<!-- form contents -->
+      <form id="form_register_form" action="#" class="form-horizontal">
+
+        <div class='form-group'>
+          <label for='name' class='col-sm-2 control-label'>Name</label>
+          <div class='col-sm-5'>
+            <input name='form_register_first_name' id='form_register_first_name' type='text' class='form-control' placeholder='First Name'>
+	    <span class="glyphicon form-control-feedback"></span>
+          </div>
+          <div class='col-sm-5'>
+            <input name='form_register_last_name' id='form_register_last_name' type='text' class='form-control' placeholder='Last Name'>
+	    <span class="glyphicon form-control-feedback"></span>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for='ecommons' class='col-sm-2 control-label'>eCommons</label>
+          <div class='col-sm-10'>
+	          <input name='form_register_ecommons' id='form_register_ecommons' type='text' class='form-control' placeholder='eCommons ID (e.g. ab123. Not an email address or a Harvard ID.)'>
+		  <span class="glyphicon form-control-feedback"></span>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for='email' class='col-sm-2 control-label'>Email</label>
+          <div class='col-sm-10'>
+            <input name='form_register_email' id='form_register_email' type='text' class='form-control' placeholder='Your Email Address'>
+	    <span class="glyphicon form-control-feedback"></span>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for='group' class='col-sm-2 control-label'>Group</label>
+          <div class='col-sm-10'>
+            <input name='form_register_group' id='form_register_group' type='text' class='form-control' placeholder='Your Group, Lab, or Affiliated Organization'>
+	    <span class="glyphicon form-control-feedback"></span>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for='research' class='col-sm-2 control-label'>Research Summary</label>
+          <div class='col-sm-10'>
+            <textarea name='form_register_research' id='form_register_research' type='text' rows='5' class='form-control' placeholder='Please briefly describe the research for which you would like to use the Orchestra cluster.'></textarea>
+	    <span class="glyphicon form-control-feedback"></span>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for='storage' class='col-sm-2 control-label'>Storage</label>
+          <div class='col-sm-10'>
+            <textarea name='form_register_storage' id='form_register_storage' type='text' rows='5' class='form-control' placeholder='Please estimate the amount of data you would need to store on the Orchestra fileserver -- immediately, 6 months from now, and a year from now. Please consider only the data that would be needed to be directly accessible by the cluster and assume that you would remove data that is no longer needed.'></textarea>
+	    <span class="glyphicon form-control-feedback"></span>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for='compute' class='col-sm-2 control-label'>Compute</label>
+          <div class='col-sm-10'>
+            <textarea name='form_register_compute' id='form_register_compute' type='text' rows='5' class='form-control' placeholder='Please estimate how long a typical job you would run on Orchestra would take and how many jobs per week you might typically run. For example, a job might take 3 hours to run on a single CPU box and you have 10 such jobs per week you would like to run.'></textarea>
+	    <span class="glyphicon form-control-feedback"></span>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for='software' class='col-sm-2 control-label'>Software</label>
+          <div class='col-sm-10'>
+            <textarea name='form_register_software' id='form_register_software' type='text' rows='5' class='form-control' placeholder='Please list the specific software packages that you will need installed on Orchestra for your research.'></textarea>
+	    <span class="glyphicon form-control-feedback"></span>
+          </div>
+        </div>
+      </form>
+
+<!-- end form contents -->
+
+	      </div>
+	      <div class="modal-footer">
+		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		<button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#form_ok" name="form_register_submit" id="form_register_submit">Submit</button>
+	      </div>
+
+	    </div>
+	  </div>
+	</div>
+	<!-- end new orchestra user -->
+
+	<!-- general help form -->
+        <div class="modal fade" id="form_support_div" role="dialog" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Submit a Request for Support</h4>
+              </div>
+              <div class="modal-body">
+
+		<!-- begin form -->
+
+		<form id='form_support_form' action="#" class='form-horizontal'>
+
+        <div class='form-group'>
+          <label for='name' class='col-sm-2 control-label'>Name</label>
+          <div class='col-sm-5'>
+            <input name='form_support_first_name' id='form_support_first_name' type='text' class='form-control' placeholder='First Name'>
+	    <span class="glyphicon form-control-feedback"></span>
+          </div>
+          <div class='col-sm-5'>
+            <input name='form_support_last_name' id='form_support_last_name' type='text' class='form-control' placeholder='Last Name'>
+	    <span class="glyphicon form-control-feedback"></span>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for='email' class='col-sm-2 control-label'>Email</label>
+          <div class='col-sm-10'>
+            <input name='form_support_email' id='form_support_email' type='text' class='form-control' placeholder='Your Email Address'>
+	    <span class="glyphicon form-control-feedback"></span>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for='group' class='col-sm-2 control-label'>Group</label>
+          <div class='col-sm-10'>
+            <input name='form_support_group' id='form_support_group' type='text' class='form-control' placeholder='Your Group, Lab, or Affiliated Organization'>
+	    <span class="glyphicon form-control-feedback"></span>
+          </div>
+        </div>
+
+	<div class='form-group'>
+	  <label for='subject' class='col-sm-2 control-label'>Subject</label>
+	    <div class='col-sm-10'>
+	      <input name='form_support_subject' id='form_support_subject' type='text' class='form-control' placeholder='Topic of Concern'>
+	      <span class="glyphicon form-control-feedback"></span>
+	    </div>
+	</div>
+        
+	<div class='form-group'>
+          <label for='message' class='col-sm-2 control-label'>Message</label>
+          <div class='col-sm-10'>
+            <textarea name='form_support_message' id='form_support_message' type='text' rows='5' class='form-control' placeholder='Enter a description of your request; please be as specific as possible.  (examples of frequently useful information includes: file paths, LSF jobids, exact error messages, examples of the commands executed).'></textarea>
+	    <span class="glyphicon form-control-feedback"></span>
+          </div>
+        </div>
+
+	</form>
+
+		<!-- end form -->
+
+              </div>
+
+              <div class="modal-footer">
+		<button name="form_support_submit" id="form_support_submit" type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal">Submit</button>
+		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+	<!-- end general help form -->
 
 	<!-- END JS FORM -->
 
       <div class="row">
         <div class="col-6 col-sm-6 col-offset-3 col-sm-offset-3">
         <p>
-	Questions about the Orchestra cluster? Fill out <!-- JS FORM --> <a href="#newuserform">this form to get an Orchestra account</a>. <!-- END JS FORM --> <noscript><a href="account.html" target="_blank">this form to get an Orchestra account</a>.</noscript> The <a href="http://wiki.med.harvard.edu/Orchestra" target="_blank">Orchestra wiki</a> has lots of information on using the cluster, including this <a href="http://wiki.med.harvard.edu/Orchestra" target="_blank">Introduction to using Orchestra</a>.
+	Questions about the Orchestra cluster? Fill out <a href="#" data-toggle="modal" data-target="#form_register_div">this form to get an Orchestra account</a>. <noscript>Actually, you don't have Javascript enabled so please use <a href="account.html" target="_blank">this form to get an Orchestra account</a> instead.</noscript> The <a href="http://wiki.med.harvard.edu/Orchestra" target="_blank">Orchestra wiki</a> has lots of information on using the cluster, including this <a href="http://wiki.med.harvard.edu/Orchestra" target="_blank">Introduction to using Orchestra</a>.
 	</p>
 	<p>
 	Or, pick one of the buttons below to request support. You can either: (1) have the Harvard community help answer your questions through OSQA, (2) fill out a web form with detailed information about your issue, (3) send us an e-mail, or (4) just visit us in person.
@@ -279,22 +465,24 @@
 
       <div class="col-2 col-sm-2 col-lg-2">
 	<span class="choose">
-	<a class="btn btn-large btn-success" href="https://qa.rc.hms.harvard.edu/" target="_blank">OSQA</a>
+	<a class="btn btn-lg btn-success" href="https://qa.rc.hms.harvard.edu/" target="_blank">OSQA</a>
 	</span>
       </div>
       <div class="col-2 col-sm-2 col-lg-2">
 	<span class="choose">
-	<a class="btn btn-large btn-success" href="support.html" target="_blank">Form</a>
+	<a class="btn btn-lg btn-success" href="#" data-toggle="modal" data-target="#form_support_div">Form</a>
+	<!-- pre javascript link -->
+	<!--<a class="btn btn-lg btn-success" href="support.html" target="_blank">Form</a>-->
 	</span>
       </div>
       <div class="col-2 col-sm-2 col-lg-2">
 	<span class="choose">
-        <a class="btn btn-large btn-success" href="mailto:rchelp@hms.harvard.edu">E-mail</a>
+        <a class="btn btn-lg btn-success" href="mailto:rchelp@hms.harvard.edu">E-mail</a>
 	</span>
       </div>
       <div class="col-2 col-sm-2 col-lg-2">
 	<span class="choose">
-        <a class="btn btn-large btn-success" href="#contact">Visit</a>
+        <a class="btn btn-lg btn-success" href="#contact">Visit</a>
 	</span>
       </div>
 
@@ -309,8 +497,8 @@
 
 
     <!-- PEOPLE AREA -->
-    <a name="people"></a>
-    <h1 class="section"><span class="glyphicon glyphicon-user"></span> People</h1>
+    <a name="people" class="panel"></a>
+    <h1 class="section" id="target_people"><span class="glyphicon glyphicon-user"></span> People</h1>
 
 	<br />
 
@@ -627,11 +815,7 @@
     <script src="js/bootstrap.min.js"></script>
 
     <!-- my own javascript -->
-    <script>
-      $(document).ready(function(){
-    	$('.carousel').carousel();
-      });
-    </script>
+    <script src="js/custom.js"></script>
 
   </body>
 </html>
