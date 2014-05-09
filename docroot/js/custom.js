@@ -14,7 +14,7 @@ $(document).ready(function(){
     $('input[type=text][class=form-control]').keyup(notBlank);
     $('textarea').keyup(notBlank);
 
-    $('#ecommons').keyup(validateEC);
+    $('#form_register_ecommons').keyup(validateEC);
     $('input[name=form_support_email]').keyup(validateEmail);
     $('input[name=form_register_email]').keyup(validateEmail);
 });
