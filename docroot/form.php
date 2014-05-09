@@ -7,8 +7,8 @@
 if (isset($_POST['form_support_email'])) {
   //if "email" is filled out, send email
 
-  $mailto = "Nam_Pho@hms.harvard.edu"; // test
-  //$mailto = "submit-it-ritg@rt.med.harvard.edu"; // prod actually makes a ticket
+  //$mailto = "Nam_Pho@hms.harvard.edu"; // test
+  $mailto = "submit-it-ritg@rt.med.harvard.edu"; // prod actually makes a ticket
   $email = strip_tags($_POST['form_support_email']);
   $subject = strip_tags($_POST['form_support_subject']);
   $first_name = strip_tags($_POST['form_support_first_name']);
@@ -53,8 +53,8 @@ Requestor's contact information:
 if (isset($_POST['form_register_email'])) {
   //if "email" is filled out, send email
 
-  $mailto = "Nam_Pho@hms.harvard.edu"; // test
-  //$mailto = "submit-it-ritg@rt.med.harvard.edu"; // prod actually makes a ticket
+  //$mailto = "Nam_Pho@hms.harvard.edu"; // test
+  $mailto = "submit-it-ritg@rt.med.harvard.edu"; // prod actually makes a ticket
   $email = strip_tags($_POST['form_register_email']) ;
   $first_name = strip_tags($_POST['form_register_first_name']);
   $last_name = strip_tags($_POST['form_register_last_name']);

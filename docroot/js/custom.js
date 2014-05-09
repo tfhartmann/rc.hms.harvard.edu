@@ -28,7 +28,7 @@ $(function() {
 	  // now send using ajax
 	  $.ajax({
 	    type: 'POST',
-            url: '/test/form.php',
+            url: '/form.php',
             data: $('#form_support_form').serialize(),
             success: function(resp) {
 		$('#form_support_div').modal('hide');
@@ -49,7 +49,7 @@ $(function() {
 	  // now send using ajax
 	  $.ajax({
 	    type: 'POST',
-            url: '/test/form.php',
+            url: '/form.php',
             data: $('#form_register_form').serialize(),
             success: function(resp) {
 		$('#form_register_div').modal('hide');
