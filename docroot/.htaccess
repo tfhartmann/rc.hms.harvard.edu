@@ -3,4 +3,5 @@ RewriteBase /
 
 RewriteRule ^orchestra_users_archive/(.*)$ https://s3.amazonaws.com/orchestra_users_archive/$1 [P]
 RewriteRule ^columbus/(.*)$ http://ec2-54-196-36-146.compute-1.amazonaws.com/$1 [P]
+ReWriteRule ^ganglia$ /ganglia/ [R]
 RewriteRule ^ganglia/(.*)$ http://clapper.orchestra/ganglia/$1 [P]
