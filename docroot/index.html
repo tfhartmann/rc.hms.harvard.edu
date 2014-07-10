@@ -95,8 +95,8 @@
     <div class="row navbar">
       <ul class="nav navbar-nav">
         <li><a href="#" class="btn btn-lg"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-        <li><a href="#projects" class="btn btn-lg"><span class="glyphicon glyphicon-list-alt"></span> Projects</a></li>
 	<li><a href="#support" class="btn btn-lg"><span class="glyphicon glyphicon-thumbs-up"></span> Support</a></li>
+        <li><a href="#projects" class="btn btn-lg"><span class="glyphicon glyphicon-list-alt"></span> Projects</a></li>
         <li><a href="#people" class="btn btn-lg"><span class="glyphicon glyphicon-user"></span> People</a></li>
         <li><a href="#downloads" class="btn btn-lg"><span class="glyphicon glyphicon-download-alt"></span> Downloads</a></li>
         <li><a href="#about" class="btn btn-lg"><span class="glyphicon glyphicon-question-sign"></span> About</a></li>
@@ -149,7 +149,7 @@
             <img src="img/ddn.jpg" alt="" class="slider" />
             <div class="carousel-caption">
               <h1>High-performance Computing</h1>
-              <p>The Orchestra HPC Cluster is about 500 nodes with over 3PB network attached storage.</p>
+              <p>The Orchestra HPC Cluster is about 500 nodes with several PB network attached storage.</p>
               <p>
               <a class="btn btn-lg btn-primary" href="https://wiki.med.harvard.edu/Orchestra/TechnicalSpecifications" target="_blank">Tech Specs</a>
               </p>
@@ -194,59 +194,6 @@
 
 
     <br /><hr /><br />
-
-
-
-    <!-- PROJECTS AREA -->
-    <a name="projects"></a>
-    <h1 class="section"><span class="glyphicon glyphicon-list-alt"></span> Projects</h1>
-
-	<br />
-
-      <div class="row">
-        <div class="col-6 col-sm-6 col-lg-6">
-          <h4><span class="glyphicon glyphicon-dashboard"></span> Orchestra Cluster</h4>
-          <p>The Orchestra cluster is a shared high-performance computing environment serving a large research community with diverse research requirements and workflows. 
-		 Tens of thousands of jobs run on the cluster every day, and we are constantly improving the job handling software and configuration to 
-		balance throughput between our many users.
-	  </p>
-
-          <h4><span class="glyphicon glyphicon-hdd"></span> Storage</h4>
-          <p>The thousands of researchers we support generate a tremendous amount of data. Some of our group resources 
-		and time go towards evaluating future storage products for cost, performance, and suitability for our 
-		researchers. 
-	  </p>
-	  <p>We currently have over 3 petabytes of network attached storage, between the various file servers.
-		Our latest addition is a Lustre based scratch filesystem, which has the potential to deliver very high read/write performance.
-	  </p>
-        </div>
-
-        <div class="col-6 col-sm-6 col-lg-6">
-          <h4><span class="glyphicon glyphicon-globe"></span> Cloud Computing</h4>
-          <p>The computational resources needed by our community wax and wane with the academic year and the funding 
-		deadlines. We are looking towards the future and evaluating cloud computing as a possible solution to 
-		provide surge compute capacity during times of high need.
-	  </p>
-
-          <h4><span class="glyphicon glyphicon-book"></span> Classes</h4>
-          <p>Members of our group are also pro-active in the Quad community and teach classes from time to time. This 
-		has ranged from introductory UNIX to Perl/BioPerl as well a more specific introduction to our 
-		cluster, Orchestra. We have slides from previous classes available.
-	  </p>
-
-          <h4><span class="glyphicon glyphicon-user"></span> Consulting</h4>
-          <p>Have a research problem and not sure how to tackle it? Contact us and have one of our research computing 
-		consultants chat with you. Consultants have a life science background and can meet with you one-on-one 
-		to help you figure out how to use computers effectively in your research or to help you get access 
-		to the resources you need.</p>
-        </div>
-      </div>
-
-
-
-    <br /><hr /><br />
-
-
 
     <!-- SUPPORT AREA -->
     <a name="support"></a>
@@ -448,8 +395,16 @@
 
       <div class="row">
         <div class="col-6 col-sm-6 col-offset-3 col-sm-offset-3">
+	<p>
+	Research Computing can help with beginner or expert questions about running bioinformatics programs, building pipelines, accessing heavy or specialized computing and storage resources, biostatistics, and programming. And if we can't help you, we'll try to find someone who can.
+	Pick one of the buttons below to request support. You can either: (1) have the Harvard community help answer your questions through the OSQA forum, (2) fill out a web form with detailed information about your issue, (3) send us an e-mail, or (4) just visit us in person. 
+	</p>
+        </div>
+      </div>
+    <br />
+
         <p>
-	Questions about the Orchestra cluster? Fill out <a href="#" data-toggle="modal" data-target="#form_register_div">this form to get an Orchestra account</a>. <noscript>Actually, you don't have Javascript enabled so please use <a href="account.html" target="_blank">this form to get an Orchestra account</a> instead.</noscript> The <a href="http://wiki.med.harvard.edu/Orchestra" target="_blank">Orchestra wiki</a> has lots of information on using the cluster, including this <a href="http://wiki.med.harvard.edu/Orchestra" target="_blank">Introduction to using Orchestra</a>.
+	Hundreds of HMS-affiliated researchers use the Orchestra high-performance computing cluster for big and small projects in next-gen sequencing analysis, molecular dynamics, mathematical modeling, image analysis, proteomics, and other areas. Click the big button below to get an account on the Orchestra cluster. <noscript>Actually, you don't have Javascript enabled so please use <a href="account.html" target="_blank">this form to get an Orchestra account</a> instead.</noscript> The <a href="http://wiki.med.harvard.edu/Orchestra" target="_blank">Orchestra wiki</a> has lots of information on using the cluster, including <a href="http://wiki.med.harvard.edu/Orchestra/NewUserIntroduction" target="_blank">an Introduction to using Orchestra</a> and a <a href="http://wiki.med.harvard.edu/Orchestra/HPCFrequentlyAskedQuestions" target="_blank">Frequently Asked Questions page.</a>.
 	</p>
 
 	<br />
@@ -460,7 +415,7 @@
 
       <div class="col-6 col-sm-6 col-lg-6">
 	<span class="choose">
-	<a class="btn btn-lg btn-danger" href="#" data-toggle="modal" data-target="#form_register_div">New User Application <span class="glyphicon glyphicon-heart-empty"></span></a>
+	<a class="btn btn-lg btn-danger" href="#" data-toggle="modal" data-target="#form_register_div">Orchestra Account Request</a>
 	<!-- pre javascript link -->
 	<!--<a class="btn btn-lg btn-success" href="account.html" target="_blank">Form</a>-->
 	</span>
@@ -470,13 +425,7 @@
       </div>
     </div>
 
-    <br />
 
-	<p>
-	Or, pick one of the buttons below to request support. You can either: (1) have the Harvard community help answer your questions through OSQA, (2) fill out a web form with detailed information about your issue, (3) send us an e-mail, or (4) just visit us in person.
-	</p>
-        </div>
-      </div>
 
       <br />
 
@@ -515,6 +464,59 @@
 
 
     <br /><hr /><br />
+
+
+
+    <!-- PROJECTS AREA -->
+    <a name="projects"></a>
+    <h1 class="section"><span class="glyphicon glyphicon-list-alt"></span> Projects</h1>
+
+	<br />
+
+      <div class="row">
+        <div class="col-6 col-sm-6 col-lg-6">
+          <h4><span class="glyphicon glyphicon-dashboard"></span> Orchestra Cluster</h4>
+          <p>The Orchestra cluster is a shared high-performance computing environment serving a large research community with diverse research requirements and workflows. 
+		 Tens of thousands of jobs run on the cluster every day, and we are constantly improving the job handling software and configuration to 
+		balance throughput between our many users.
+	  </p>
+
+          <h4><span class="glyphicon glyphicon-hdd"></span> Storage</h4>
+          <p>The thousands of researchers we support generate a tremendous amount of data. Some of our group resources 
+		and time go towards evaluating future storage products for cost, performance, and suitability for our 
+		researchers. 
+	  </p>
+	  <p>We currently have several petabytes of network attached storage, between the various file servers.
+		Our latest addition is a Lustre based scratch filesystem, which has the potential to deliver very high read/write performance.
+	  </p>
+        </div>
+
+        <div class="col-6 col-sm-6 col-lg-6">
+          <h4><span class="glyphicon glyphicon-globe"></span> Cloud Computing</h4>
+          <p>The computational resources needed by our community wax and wane with the academic year and the funding 
+		deadlines. We are looking towards the future and evaluating cloud computing as a possible solution to 
+		provide surge compute capacity during times of high need.
+	  </p>
+
+          <h4><span class="glyphicon glyphicon-book"></span> Classes</h4>
+          <p>Members of our group are also pro-active in the Quad community and teach classes from time to time. This 
+		has ranged from introductory UNIX to Perl/BioPerl as well a more specific introduction to our 
+		cluster, Orchestra. We have slides from previous classes available.
+	  </p>
+
+          <h4><span class="glyphicon glyphicon-user"></span> Consulting</h4>
+          <p>Have a research problem and not sure how to tackle it? Contact us and have one of our research computing 
+		consultants chat with you. Consultants have a life science background and can meet with you one-on-one 
+		to help you figure out how to use computers effectively in your research or to help you get access 
+		to the resources you need.</p>
+        </div>
+      </div>
+
+
+
+    <br /><hr /><br />
+
+
 
 
 
@@ -702,16 +704,17 @@
 	Computational research is an increasingly important part of any life science research project. Research computing staff help researchers get access to software and hardware resources and provide advice on how to use those resources. Ask us big or small, beginner or expert questions.
 	</p>
 
-	<p>We can help you with things like...
+	<p>We can help you ...
 	<ul>
-	<li>access an HPCC (high-performance compute cluster) to analyze data,</li>
-	<li>install or use a particular bioinformatics program,</li>
-	<li>make your programs run faster,</li>
-	<li>reformat data so that a particular program will read it,</li>
-	<li>run MPI parallel jobs on a cluster,</li>
-	<li>run Matlab or Mathematica interactively or in batch,</li>
-	<li>download exon sequences for genes, with 100 bp on either side,</li>
-	<li>run your analysis 5000+ times using a simple script, or</li>
+	<li>access the Orchestra cluster to analyze data</li>
+	<li>Run RNA-Seq, ChIP-Seq, or your favorite other -Seq pipeline</li>
+	<li>install or use a particular bioinformatics program</li>
+	<li>make your programs run faster</li>
+	<li>filter and reformat data so that a particular program (or you) can read it</li>
+	<li>run MPI parallel jobs on a cluster</li>
+	<li>run Matlab or Mathematica interactively or in batch</li>
+	<li>download exon sequences for genes, with 100 bp on either side</li>
+	<li>run your analysis 5000+ times using a simple script</li>
 	<li>get terabytes of backed-up storage for next-gen sequence analysis.</li>
 	</ul>
 	</p>
@@ -726,8 +729,8 @@
 
 	<h4 class="section"><span class="glyphicon glyphicon-music"></span> Orchestra <span class="glyphicon glyphicon-music"></span></h4>
 	<p>
-	Orchestra is a shared high-performance computing (HPC) environment maintained by our group. It has approximately 
-	500 compute nodes and roughly 3 Petabytes of network attached storage. Although it was originally designed to 
+	Orchestra is a shared high-performance computing (HPC) environment maintained by our group. It has over 
+	5000 compute cores and several Petabytes of network attached storage. Although it was originally designed to 
 	enable computationally intensive bioinformatics research, it has evolved to support other IT solutions including web 
 	hosting. You can <a href="https://wiki.med.harvard.edu/Orchestra/TechnicalSpecifications">read more about the Orchestra hardware here</a>.
 	</p>
