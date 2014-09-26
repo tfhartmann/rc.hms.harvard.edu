@@ -7,17 +7,17 @@
     <!-- javascript added at the bottom -->
 
     <!-- we are using bootstrap 3.1.1 -->
-    <link href="css/bootstrap.min.css" rel="stylesheet"> <!-- boostrap 3 min from stock -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet"> <!-- boostrap 3 min from stock -->
 
     <!-- font awesome -->
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
     <!--[if IE 7]>
 	<link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css">
     <![endif]-->
 
     <!-- somehow this is v2.3.2 legacy -->
-    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="css/bootstrap-glyphicons.css" rel="stylesheet" media="screen">
+    <link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-glyphicons.css" rel="stylesheet" media="screen">
 
     <style>
         .navbar {
@@ -87,7 +87,9 @@
 
     <div class="row">
       <div class="col-12">
-        <img src="img/hms_logo.jpg" style="width: 75px; float: left; padding-right: 10px;" />
+	<a href="/">
+        <img src="/img/hms_logo.jpg" style="width: 75px; float: left; padding-right: 10px;" />
+	</a>
         <h3>Harvard Medical School <br /> Research Computing</h3>
       </div>
     </div>
@@ -117,14 +119,27 @@
           <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
           <li data-target="#carousel-example-generic" data-slide-to="1"></li>
           <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
 
-          <!-- picture 1 -->
+          <!-- picture XSEDE -->
           <div class="item crop active">
-            <img src="img/osqa.png" alt="" class="slider" />
+            <img src="/img/xsede-black.png" alt="" width="100%" style="padding-top: 275px; background-color: #990000" class="slider" />
+            <div class="carousel-caption">
+              <h1></h1>
+              <p>Learn more about XSEDE resources...</p>
+              <p>
+              <a class="btn btn-lg btn-primary" href="/xsede/">XSEDE at HMS</a>
+              </p>
+            </div>
+          </div>
+
+          <!-- picture OSQA -->
+          <div class="item crop">
+            <img src="/img/osqa.png" alt="" class="slider" />
             <div class="carousel-caption">
               <h1>Want to engage with your fellow Orchestra researchers?</h1>
               <p>Check out our new crowd sourced question and answer forum...</p>
@@ -134,9 +149,9 @@
             </div>
           </div>
 
-          <!-- picture 2 -->
+          <!-- picture NEW USER -->
           <div class="item crop">
-            <img src="img/new_user.png" alt="" class="slider" />
+            <img src="/img/new_user.png" alt="" class="slider" />
             <div class="carousel-caption">
               <h1>Newly created user?</h1>
               <p>Here are answers to some common asked questions to help you get started...</p>
@@ -146,9 +161,9 @@
             </div>
           </div>
 
-          <!-- picture 3 -->
+          <!-- picture Orchestra HPC SPECS -->
           <div class="item crop">
-            <img src="img/ddn.jpg" alt="" class="slider" />
+            <img src="/img/ddn.jpg" alt="" class="slider" />
             <div class="carousel-caption">
               <h1>High-performance Computing</h1>
               <p>The Orchestra HPC Cluster is about 500 nodes with several PB network attached storage.</p>
