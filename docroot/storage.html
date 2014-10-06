@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HMS Research Computing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+      <script>  
+        <!--                                                                                          
+        window.location = 'https://rc.hms.harvard.edu/#storage';
+        //-->                                                              
+      </script>                                                       
+
+  </head>
+  <body>
+    <div class="container">
+
+<?php
+if (isset($_REQUEST['email'])) {
+  //if "email" is filled out, send email
+
+  $mailto = "kristina_holton@hms.harvard.edu"; // test
+  //$mailto = "submit-it-ritg@rt.med.harvard.edu"; // prod actually makes a ticket
+  //$mailto = "rcops@hms.harvard.edu"; // prod actually makes a ticket
+  $email = $_REQUEST['email'] ;
+  $subject = $_REQUEST['requested-storage'] ;
+  $first_name = $_REQUEST['first_name'];
+  $last_name = $_REQUEST['last_name'];
+  $group = $_REQUEST['group'];
+
+  $message = "This ticket was submitted via http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . "
+
+-------------------------------------------------------------------------------
+Requestor's contact information:
+
+        $first_name $last_name	<$email>
+        Group:\t\t$group
+-------------------------------------------------------------------------------
+
+";
+
+  $message .= $_REQUEST['message'];
+
+  //print($message);
+
+  // actually mail out the converted form  
+  mail($mailto, $requested-storage, $message, "From:" . $email);
+  
+  echo "
+   	<h1>Submit a Request for More Storage</h1>
+    	<br />
+	<p>You can close this window; you will get an e-mail with your ticket number shortly.</p>
+	<br />
+	<p>Thank you for using our web form.</p>
+	<br />
+	<p> -- HMS Research Computing </p>
+  ";
+
+  //print_r(array_values(get_defined_vars())); // debug
+
+  } else {
+  //if "email" is not filled out, display the form
+
+  echo "
+      <noscript>
+	<form method='post' action='' class='form-horizontal'>
+	<div class='form-group'>
+	  <div class='col-offset-2 col-sm-offset-2 col-lg-offset-2'>
+	    <h1>Submit a New Support Request</h1>
+
+            <div class='col-7 col-sm-7 col-lg-7 bg-warning'>                                                                 
+              <h4>Warning!</h4>                                                                                            
+              <p>You have JavaScript disabled so this is a legacy form that is no longer updated, please visit <a href='https://rc.hms.harvard.edu/#storage'>here</a> for the latest support.</p>                            
+	    </div>
+
+	  </div>
+	</div>
+        <div class='form-group'>
+          <label for='name' class='col-lg-2 control-label'>Name</label>
+          <div class='col-3 col-sm-3 col-lg-3'>
+            <input name='first_name' id='first_name' type='text' class='form-control' placeholder='First Name'>
+          </div>
+          <div class='col-3 col-sm-3 col-lg-3'>
+            <input name='last_name' id='last_name' type='text' class='form-control' placeholder='Last Name'>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label for='email' class='col-lg-2 control-label'>Email</label>
+          <div class='col-6 col-sm-6 col-lg-6'>
+            <input name='email' id='email' type='text' class='form-control' placeholder='Your Email Address'>
+          </div>
+        </div>
+        <div class='form-group'>
+          <label for='group' class='col-lg-2 control-label'>Group</label>
+          <div class='col-6 col-sm-6 col-lg-6'>
+            <input name='group' id='group' type='text' class='form-control' placeholder='Your Group, Lab, or Affiliated Organization'>
+          </div>
+        </div>
+	<div class='form-group'>
+	  <label for='requested-storage' class='col-lg-2 control-label'>Storage</label>
+	  <div class='col-6 col-sm-6 col-lg-6'>
+	    <input name='requested-storage' id='amount' type='text' class='form-control' placeholder='Amount of Additional Storage Requested'>
+	  </div>
+	</div>
+        <div class='form-group'>
+          <label for='message' class='col-lg-2 control-label'>Message</label>
+          <div class='col-6 col-sm-6 col-lg-6'>
+            <textarea name='message' id='message' type='text' rows='5' class='form-control' placeholder='Enter the amount of projected data growth.'></textarea>
+          </div>
+        </div>
+	<br />
+	<div class='form-group'>
+	  <div class='col-offset-4 col-sm-offset-4 col-lg-offset-4'>
+	    <button type='submit' class='btn btn-default'>Submit</button>
+	  </div>
+	</div>
+	</form>
+      </noscript>
+  ";
+  }
+?>
+
+    <!-- JavaScript plugins (requires jQuery) -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+  </div>
+  </body>
+</html>
+
