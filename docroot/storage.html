@@ -20,9 +20,9 @@
 if (isset($_REQUEST['email'])) {
   //if "email" is filled out, send email
 
-  $mailto = "kristina_holton@hms.harvard.edu"; // test
+  //$mailto = "kristina_holton@hms.harvard.edu"; // test
   //$mailto = "submit-it-ritg@rt.med.harvard.edu"; // prod actually makes a ticket
-  //$mailto = "rcops@hms.harvard.edu"; // prod actually makes a ticket
+  $mailto = "rcops@hms.harvard.edu"; // prod actually makes a ticket
   $email = $_REQUEST['email'] ;
   $subject = $_REQUEST['requested-storage'] ;
   $first_name = $_REQUEST['first_name'];
@@ -88,7 +88,7 @@ Requestor's contact information:
         <div class='form-group'>
           <label for='email' class='col-lg-2 control-label'>Email</label>
           <div class='col-6 col-sm-6 col-lg-6'>
-            <input name='email' id='email' type='text' class='form-control' placeholder='Your Email Address'>
+            <input name='email' id='email' type='text' class='form-control' placeholder='Your Harvard Email Address'>
           </div>
         </div>
         <div class='form-group'>
