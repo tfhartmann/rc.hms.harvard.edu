@@ -70,6 +70,28 @@ $(function() {
     });
 });
 
+$(function() {
+    $('button#form_storage_submit').click(function() {
+        // validate form first        
+        console.log("the storage submit button works");
+
+        if (1) {
+          // now send using ajax  
+            $.ajax({
+		type: 'POST',
+		url: '/form.php',
+		data: $('#form_storage_form').serialize(),
+		success: function(resp) {
+                    $('#form_storage_div').modal('hide');
+                    $('#form_ok').modal('show');
+                    console.log(resp);
+		}
+            });
+        }
+    });
+});
+
+
 function scrollToElement( target ) {
     var topoffset = 30;
     var speed = 800;
