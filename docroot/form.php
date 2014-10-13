@@ -114,9 +114,9 @@ Software requirements: $software
 if (isset($_POST['form_storage_email'])) {
   //if "email" is filled out, send email
 
-  $mailto = "Nam_Pho@hms.harvard.edu"; // test
+  //$mailto = "Nam_Pho@hms.harvard.edu"; // test
   //$mailto = "submit-it-ritg@rt.med.harvard.edu"; // prod actually makes a ticket
-  //$mailto = "rcops@hms.harvard.edu";
+  $mailto = "rcops@hms.harvard.edu";
   $email = strip_tags($_POST['form_storage_email']) ;
   $first_name = strip_tags($_POST['form_storage_first_name']);
   $last_name = strip_tags($_POST['form_storage_last_name']);
