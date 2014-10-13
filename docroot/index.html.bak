@@ -7,19 +7,72 @@
     <!-- javascript added at the bottom -->
 
     <!-- we are using bootstrap 3.1.1 -->
-    <link href="css/bootstrap.min.css" rel="stylesheet"> <!-- boostrap 3 min from stock -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet"> <!-- boostrap 3 min from stock -->
 
     <!-- font awesome -->
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
     <!--[if IE 7]>
 	<link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css">
     <![endif]-->
 
     <!-- somehow this is v2.3.2 legacy -->
-    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="css/bootstrap-glyphicons.css" rel="stylesheet" media="screen">
+    <link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-glyphicons.css" rel="stylesheet" media="screen">
 
-    <link href="css/custom.css" rel="stylesheet">
+    <style>
+        .fixed {
+	        position: fixed;
+	        top: 0px;
+	        z-index: 100;
+	}
+
+        .navbar {
+	        background: #eee;
+	}
+
+	img.profile { 
+		width: 100px;
+		height: 100px;
+		border: 1px solid black;
+	}
+
+	.modal-header {
+	        background: #0099FF;
+	}
+
+	.section { 
+		text-align: center;
+	}
+
+	.choose {
+		padding-left: 30%;
+	}
+
+	.crop { 
+		width: 100%;
+		height: 400px;
+		overflow: hidden;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+	}
+
+	img.slider { 
+		width: 100%;
+		display: block;
+		position: relative;
+		top: -300px;
+	}
+
+	.alphacap {
+		opacity:0.4;
+		filter:alpha(opacity=40); /* For IE8 and earlier */
+	}
+
+	.form-control-feedback {
+	        display: none;
+	}
+    </style>
 
     <!-- GA by np106 -->
     <script>
@@ -52,12 +105,10 @@
     <div class="row navbar">
       <ul class="nav navbar-nav">
         <li><a href="#" class="btn btn-lg"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-        <li><a href="#orchestra" class="btn btn-lg"><span class="glyphicon glyphicon-music"></span> Orchestra</a></li>
-		<li><a href="#consulting" class="btn btn-lg"><span class="glyphicon glyphicon-user"></span> Consulting</a></li>
-        <li><a href="#storage" class="btn btn-lg"><span class="glyphicon glyphicon-hdd"></span> Storage</a></li>
-        <li><a href="#utraining" class="btn btn-lg"><span class="glyphicon glyphicon-book"></span> User Training</a></li>      
-        <li><a href="#downloads" class="btn btn-lg"><span class="glyphicon glyphicon-download-alt"></span> Downloads</a></li>
+	<li><a href="#support" class="btn btn-lg"><span class="glyphicon glyphicon-thumbs-up"></span> Support</a></li>
+        <li><a href="#projects" class="btn btn-lg"><span class="glyphicon glyphicon-list-alt"></span> Projects</a></li>
         <li><a href="#people" class="btn btn-lg"><span class="glyphicon glyphicon-user"></span> People</a></li>
+        <li><a href="#downloads" class="btn btn-lg"><span class="glyphicon glyphicon-download-alt"></span> Downloads</a></li>
         <li><a href="#about" class="btn btn-lg"><span class="glyphicon glyphicon-question-sign"></span> About</a></li>
         <li><a href="#contact" class="btn btn-lg"><span class="glyphicon glyphicon-map-marker"></span> Contact</a></li>
       </ul>
@@ -107,7 +158,7 @@
               <h1>Want to engage with your fellow Orchestra researchers?</h1>
               <p>Check out our new crowd sourced question and answer forum...</p>
               <p>
-      	      <a class="btn btn-lg btn-primary" href="https://qa.rc.hms.harvard.edu" target="_blank">Orchestra Q/A</a>
+      	      <a class="btn btn-lg btn-primary" href="https://qa.rc.hms.harvard.edu" target="_blank">OSQA</a>
               </p>
             </div>
           </div>
@@ -117,9 +168,9 @@
             <img src="/img/new_user.png" alt="" class="slider" />
             <div class="carousel-caption">
               <h1>Newly created user?</h1>
-              <p>Here is the Orchestra New User Guide to help you get started...</p>
+              <p>Here are answers to some common asked questions to help you get started...</p>
               <p>
-      	      <a class="btn btn-lg btn-primary" href="https://wiki.med.harvard.edu/Orchestra/UserGuide" target="_blank">New User Guide</a>
+      	      <a class="btn btn-lg btn-primary" href="https://wiki.med.harvard.edu/Orchestra/HPCFrequentlyAskedQuestions" target="_blank">FAQ</a>
               </p>
             </div>
           </div>
@@ -150,7 +201,6 @@
 
     </div> <!-- close row -->
 
-
     <br />
 
     <!-- STATUS AREA -->
@@ -177,15 +227,33 @@
 
 
     <br /><hr /><br />
-   
-	
-	<div class="container">
-	<!-- ORCHESTRA AREA -->
-    <a name="orchestra"></a>
-    <h1 class="section"><span class="glyphicon glyphicon-music"></span> Orchestra</h1>
+
+    <!-- SUPPORT AREA -->
+    <a name="support"></a>
+    <h1 class="section"><span class="glyphicon glyphicon-thumbs-up"></span> Support</h1>
 
 	<br />
 
+	<!-- JS FORM -->
+
+	<!-- form ok -->
+	<div class="modal fade" id="form_ok" role="dialog" tabindex="-1">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h4 class="modal-title">Form Submitted</h4>
+	      </div>
+	      <div class="modal-body">
+		<p>You should receive confirmation at the e-mail address you provided shortly.</p>
+	      </div>
+	      <div class="modal-footer">
+		<button type="button" class="btn btn-primary btn-success" data-dismiss="modal">Ok</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- end form ok -->
 
 	<!-- new orchestra user -->
 	<div class="modal fade" id="form_register_div" role="dialog" tabindex="-1">
@@ -282,98 +350,6 @@
 	</div>
 	<!-- end new orchestra user -->
 
-
-      <div class="row">
-        <div class="col-6 col-sm-6 col-offset-3 col-sm-offset-3">
-	<p style="color:red;">
-	NOTE: for after hours emergency support please contact the IT help desk and let them know you have a research computing issue by calling (617) 432-2000 or e-mailing <a href="itservicedesk@hms.harvard.edu">itservicedesk@hms.harvard.edu</a>.
-	</p>
-	<p>The Orchestra cluster is a shared high-performance computing environment serving a large research community with diverse research requirements and workflows. 
-		 Tens of thousands of jobs run on the cluster every day, and we are constantly improving the job handling software and configuration to 
-		balance throughput between our many users.
-	</p>
-	<p>
-	Hundreds of HMS-affiliated researchers use the Orchestra high-performance computing cluster for big and small projects in next-gen sequencing analysis, molecular dynamics, mathematical modeling, image analysis, proteomics, and other areas. Click the big button below to get an account on the Orchestra cluster. <noscript>Actually, you don't have Javascript enabled so please use <a href="account.html" target="_blank">this form to get an Orchestra account</a> instead.</noscript> The <a href="http://wiki.med.harvard.edu/Orchestra" target="_blank">Orchestra wiki</a> has lots of information on using the cluster, including <a href="http://wiki.med.harvard.edu/Orchestra/NewUserIntroduction" target="_blank">an Introduction to using Orchestra</a> and a <a href="http://wiki.med.harvard.edu/Orchestra/HPCFrequentlyAskedQuestions" target="_blank">Frequently Asked Questions page.</a>.
-	</p>
-	
-	
-        </div>
-      </div>
-    <br />
-
-    <div class="row">
-      <div class="col-1 col-sm-1 col-lg-1">
-      </div>
-
-      <div class="col-3 col-sm-3 col-lg-3">
-	<span class="choose">
-	<a class="btn btn-lg btn-success" href="https://wiki.med.harvard.edu/Orchestra/UserGuide" target="_blank">User's Guide</a>
-	</span>
-      </div>
-      
-       <div class="col-3 col-sm-3 col-lg-3">
-	<span class="choose">
-	<a class="btn btn-lg btn-success" href="https://qa.rc.hms.harvard.edu/" target="_blank">Orchestra Q/A</a>
-	</span>
-      </div>
-      
-      <div class="col-3 col-sm-3 col-lg-3">
-	<span class="choose">
-	<a class="btn btn-lg btn-success" href="https://wiki.med.harvard.edu/Orchestra/WebHome" target="_blank">Orchestra Wiki</a>
-	</span>
-      </div>
-
-      <div class="col-1 col-sm-1 col-lg-1">
-      </div>
-    </div>
-
-	<br /> <br />
-
-    <div class="row">
-      <div class="col-2 col-sm-2 col-lg-2">
-      </div>
-
-      <div class="col-7 col-sm-7 col-lg-7">
-	<span class="choose">
-	<a class="btn btn-lg btn-danger" href="#" data-toggle="modal" data-target="#form_register_div">Orchestra Account Request</a>
-	<!-- pre javascript link -->
-	<!--<a class="btn btn-lg btn-success" href="account.html" target="_blank">Form</a>-->
-	</span>
-      </div>
-
-      <div class="col-3 col-sm-3 col-lg-3"> 
-      </div>
-    </div>
-
-    <br /><hr /><br />
-
- 	<!-- CONSULTING AREA -->
-    
-    <a name="consulting"></a>
-    <h1 class="section"><span class="glyphicon glyphicon-user"></span> Consulting</h1>
-	<br />
-	
-	<!-- JS FORM -->
-
-	<!-- form ok -->
-	<div class="modal fade" id="form_ok" role="dialog" tabindex="-1">
-	  <div class="modal-dialog modal-sm">
-	    <div class="modal-content">
-	      <div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h4 class="modal-title">Form Submitted</h4>
-	      </div>
-	      <div class="modal-body">
-		<p>You should receive confirmation at the e-mail address you provided shortly.</p>
-	      </div>
-	      <div class="modal-footer">
-		<button type="button" class="btn btn-primary btn-success" data-dismiss="modal">Ok</button>
-	      </div>
-	    </div>
-	  </div>
-	</div>
-	<!-- end form ok -->
-	
 	<!-- general help form -->
         <div class="modal fade" id="form_support_div" role="dialog" tabindex="-1">
           <div class="modal-dialog">
@@ -448,13 +424,356 @@
         </div>
 	<!-- end general help form -->
 
-	<!-- END JS FORM -->	
-	
+	<!-- END JS FORM -->
 
-       
-     	<div class="row">
-		<div class="col-6 col-sm-6 col-offset-3 col-sm-offset-3">
-    	<b>Helping beginners and experts get research done on computers.</b>
+      <div class="row">
+        <div class="col-6 col-sm-6 col-offset-3 col-sm-offset-3">
+	<p style="color:red;">
+	NOTE: for after hours emergency support please contact the IT help desk and let them know you have a research computing issue by calling (617) 432-2000 or e-mailing <a href="itservicedesk@hms.harvard.edu">itservicedesk@hms.harvard.edu</a>.
+	</p>
+	<p>
+	Research Computing can help with beginner or expert questions about running bioinformatics programs, building pipelines, accessing heavy or specialized computing and storage resources, biostatistics, and programming. And if we can't help you, we'll try to find someone who can.
+	Pick one of the buttons below to request support. You can either: (1) have the Harvard community help answer your questions through the OSQA forum, (2) fill out a web form with detailed information about your issue, (3) send us an e-mail, or (4) just visit us in person. 
+	</p>
+        </div>
+      </div>
+    <br />
+
+    <div class="row">
+      <div class="col-2 col-sm-2 col-lg-2">
+      </div>
+
+      <div class="col-2 col-sm-2 col-lg-2">
+	<span class="choose">
+	<a class="btn btn-lg btn-success" href="https://qa.rc.hms.harvard.edu/" target="_blank">OSQA</a>
+	</span>
+      </div>
+      <div class="col-2 col-sm-2 col-lg-2">
+	<span class="choose">
+	<a class="btn btn-lg btn-success" href="#" data-toggle="modal" data-target="#form_support_div">Form</a>
+	<!-- pre javascript link -->
+	<!--<a class="btn btn-lg btn-success" href="support.html" target="_blank">Form</a>-->
+	</span>
+      </div>
+      <div class="col-2 col-sm-2 col-lg-2">
+	<span class="choose">
+        <a class="btn btn-lg btn-success" href="mailto:rchelp@hms.harvard.edu">E-mail</a>
+	</span>
+      </div>
+      <div class="col-2 col-sm-2 col-lg-2">
+	<span class="choose">
+        <a class="btn btn-lg btn-success" href="#contact">Visit</a>
+	</span>
+      </div>
+
+      <div class="col-2 col-sm-2 col-lg-2">
+      </div>
+    </div>
+
+
+      <br />
+
+      <div class="row">
+        <div class="col-6 col-sm-6 col-offset-3 col-sm-offset-3">
+        <p>
+	Hundreds of HMS-affiliated researchers use the Orchestra high-performance computing cluster for big and small projects in next-gen sequencing analysis, molecular dynamics, mathematical modeling, image analysis, proteomics, and other areas. Click the big button below to get an account on the Orchestra cluster. <noscript>Actually, you don't have Javascript enabled so please use <a href="account.html" target="_blank">this form to get an Orchestra account</a> instead.</noscript> The <a href="http://wiki.med.harvard.edu/Orchestra" target="_blank">Orchestra wiki</a> has lots of information on using the cluster, including <a href="http://wiki.med.harvard.edu/Orchestra/NewUserIntroduction" target="_blank">an Introduction to using Orchestra</a> and a <a href="http://wiki.med.harvard.edu/Orchestra/HPCFrequentlyAskedQuestions" target="_blank">Frequently Asked Questions page.</a>.
+	</p>
+      </div>
+    </div>
+
+	<br />
+
+    <div class="row">
+      <div class="col-3 col-sm-3 col-lg-3">
+      </div>
+
+      <div class="col-6 col-sm-6 col-lg-6">
+	<span class="choose">
+	<a class="btn btn-lg btn-danger" href="#" data-toggle="modal" data-target="#form_register_div">Orchestra Account Request</a>
+	<!-- pre javascript link -->
+	<!--<a class="btn btn-lg btn-success" href="account.html" target="_blank">Form</a>-->
+	</span>
+      </div>
+
+      <div class="col-3 col-sm-3 col-lg-3"> </div>
+    </div>
+
+
+
+
+
+    <br /><hr /><br />
+
+
+
+    <!-- PROJECTS AREA -->
+    <a name="projects"></a>
+    <h1 class="section"><span class="glyphicon glyphicon-list-alt"></span> Projects</h1>
+
+	<br />
+
+      <div class="row">
+        <div class="col-6 col-sm-6 col-lg-6">
+          <h4><span class="glyphicon glyphicon-dashboard"></span> Orchestra Cluster</h4>
+          <p>The Orchestra cluster is a shared high-performance computing environment serving a large research community with diverse research requirements and workflows. 
+		 Tens of thousands of jobs run on the cluster every day, and we are constantly improving the job handling software and configuration to 
+		balance throughput between our many users.
+	  </p>
+
+          <h4><span class="glyphicon glyphicon-hdd"></span> Storage</h4>
+          <p>The thousands of researchers we support generate a tremendous amount of data. Some of our group resources 
+		and time go towards evaluating future storage products for cost, performance, and suitability for our 
+		researchers. 
+	  </p>
+	  <p>We currently have several petabytes of network attached storage, between the various file servers.
+		Our latest addition is a Lustre based scratch filesystem, which has the potential to deliver very high read/write performance.
+	  </p>
+        </div>
+
+        <div class="col-6 col-sm-6 col-lg-6">
+          <h4><span class="glyphicon glyphicon-globe"></span> Cloud Computing</h4>
+          <p>The computational resources needed by our community wax and wane with the academic year and the funding 
+		deadlines. We are looking towards the future and evaluating cloud computing as a possible solution to 
+		provide surge compute capacity during times of high need.
+	  </p>
+
+          <h4><span class="glyphicon glyphicon-book"></span> Classes</h4>
+          <p>Members of our group are also pro-active in the Quad community and teach classes from time to time. This 
+		has ranged from introductory UNIX to Perl/BioPerl as well a more specific introduction to our 
+		cluster, Orchestra. We have slides from previous classes available.
+	  </p>
+
+	  <ul>
+	    <li>Next-generation Sequencing [<a href="training/NGS-20140813/">Slides</a>]</li>
+	    <li>BioPerl [<a href="training/perl/">Content</a>]</li>
+	  </ul>
+
+          <h4><span class="glyphicon glyphicon-user"></span> Consulting</h4>
+          <p>Have a research problem and not sure how to tackle it? Contact us and have one of our research computing 
+		consultants chat with you. Consultants have a life science background and can meet with you one-on-one 
+		to help you figure out how to use computers effectively in your research or to help you get access 
+		to the resources you need.</p>
+        </div>
+      </div>
+
+
+
+    <br /><hr /><br />
+
+
+
+
+
+    <!-- PEOPLE AREA -->
+    <a name="people" class="panel"></a>
+    <h1 class="section" id="target_people"><span class="glyphicon glyphicon-user"></span> People</h1>
+
+	<br />
+
+      <div class="row">
+        <div class="col-6 col-sm-6 col-lg-6 col-offset-3 col-sm-offset-3 col-lg-offset-3">
+	<p>We are a small team dedicated to promoting and maintaining the use of HPC in the research community. Meet some 
+		of our members below.
+	</p>
+        </div>
+      </div>
+
+      <br />
+
+      <!-- ROW 1 -->
+      <div class="row">
+        <div class="col-6 col-sm-4 col-lg-4">
+		<img src="img/andy.jpg" class="profile img-circle" />
+		<h4>Andy Bergman</h4>
+		<i>Research Systems Administrator</i>
+		<p>I help support the HMS user community to better use our HPC, web hosting, and software licensing services. </p>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-4">		
+		<img src="img/doug.png" class="profile img-circle" />
+                <h4>Doug Feldmann</h4>
+		<i>Senior Research Systems Architect</i>
+                <p>Doug's focus is on the web-hosting service and base infrastructure of the Orchestra cluster.</p>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-4">
+		<img src="img/peter.jpg" class="profile img-circle" />
+                <h4>Peter Doherty</h4>
+		<i>Research Systems Administrator</i>
+                <p>I look after the Orchestra HPC cluster, with a focus on optimizing the queuing, operating system, storage, and network components.</p>
+        </div>
+      </div>
+
+      <br />
+
+      <!-- ROW 2 -->
+      <div class="row">
+        <div class="col-6 col-sm-4 col-lg-4">
+		<img src="img/amir.png" class="profile img-circle" />
+                <h4>Amir Karger</h4>
+                <i>Senior Research Computing Consultant</i>
+		<p>I love talking to scientists about their research and helping catalyze their way over the computational barriers. "perl" is one of my favorite verbs. </p>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-4">
+		<img src="img/bd.png" class="profile img-circle" />
+                <h4>BD Kim</h4>
+		<i>Associate Director of Research Computing</i>
+                <p>I help manage the cluster.</p>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-4">
+		<img src="img/chris.gif" class="profile img-circle" />
+                <h4>Chris Botka</h4>
+		<i>Director of Research Computing</i>
+                <p>I strategically visualize things. Ask me about the future of Orchestra. Suggestions welcome.</p>
+	</div>
+      </div>
+
+      <br />
+
+      <div class="row">
+        <div class="col-6 col-sm-4 col-lg-4">
+		<img src="img/nam.jpg" class="profile img-circle" />
+                <h4>Nam Pho</h4>
+		<i>Research Computing Consultant</i>
+
+		<!-- array of contact methods
+		<div class="contact" style="padding-top: 5px; margin-right: 10px; padding-bottom: 5px;">
+		  <a href="mailto:nam_pho@hms.harvard.edu"><span class="icon-envelope-alt icon-large"></span></a>
+		  <a href="https://www.linkedin.com/in/nampho/"><span class="icon-linkedin icon-large"></span></a>
+		  <a href="https://www.facebook.com/nampho2/"><span class="icon-facebook icon-large"></span></a>
+		  <a href="https://twitter.com/nampho2/"><span class="icon-twitter icon-large"></span></a>
+		  <a href="https://github.com/nampho2/"><span class="icon-github-alt icon-large"></span></a>
+		  <a href="https://plus.google.com/u/0/+NamPho/"><span class="icon-google-plus icon-large"></span></a>
+		  <a href="http://www.nampho.tk/atom.xml"><i class="icon-rss icon-large"></i></a>
+		</div>
+		-->
+
+                <p>
+		  <a href="https://twitter.com/search?q=%23bigdata">#bigdata</a>
+		  <a href="https://twitter.com/search?q=%23science">#science</a>
+		  <a href="https://twitter.com/search?q=%23hpc">#hpc</a>
+		  <a href="https://twitter.com/search?q=%23bioinformatics">#bioinformatics</a>
+		</p>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-4">
+                <img src="img/david.jpg" class="profile img-circle" />
+                <h4>David Hummel</h4>
+                <i>Senior DevOps Engineer</i>
+                <p>Previously worked as a molecular biologist, bioinformatician and software developer. Now designs scalable and maintainable research computing infrastructure, both physical and virtual.</p>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-4">
+                <img src="img/tom.jpg" class="profile img-circle" />
+                <h4>Tom Chittenden</h4>
+                <i>Senior Biostatistics &amp Mathematical Biology Consultant</i>
+                <p>I develop mathematical and statistical models to further understanding of complex biological systems.</p>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="row">
+        <div class="col-6 col-sm-4 col-lg-4">
+		<img src="img/you.jpg" class="profile img-circle" />
+                <h4>Current Opening</h4>
+		<i>Senior Research Computing Consultant</i>
+                <p>An exciting position has opened up in our group, please read more details and apply <a href="http://hmsrc.me/SrRCC">hmsrc.me/SrRCC</a>.</p>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-4">
+		<img src="img/ld.jpg" class="profile img-circle" />
+                <h4>Lingsheng Dong</h4>
+		<i>Senior Research Computing Consultant</i>
+                <p>Helping biomedical researchers with their computational needs. Any feedback is welcomed.</p>
+        </div>
+        <div class="col-6 col-sm-4 col-lg-4">
+		<img src="img/you.jpg" class="profile img-circle" />
+                <h4>Current Opening</h4>
+		<i>DevOps Engineer #1</i>
+                <p>We have an exciting position open to do some automation of systems administration for HPC.</p>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="row">
+        <div class="col-6 col-sm-4 col-lg-4">
+		<img src="img/you.jpg" class="profile img-circle" />
+                <h4>Current Opening</h4>
+		<i>DevOps Engineer #2</i>
+                <p>We have an exciting position open to do some automation of systems administration for HPC. Any parallel file system experience is a plus.</p>
+        </div>
+      </div>
+
+      <br /><hr /><br />
+
+
+
+    <!-- DOWNLOADS AREA -->
+    <a name="downloads"></a>
+    <h1 class="section"><span class="glyphicon glyphicon-download-alt"></span> Downloads</h1>
+
+	<br />
+
+    <div class="row">
+      <div class="col-8 col-sm-8 col-lg-8 col-offset-2 col-sm-offset-2 col-lg-offset-2">
+	<p>We do have some code available through our <a href="https://github.com/hmsrc">Github</a>.</p>
+
+	<p>There are many <a href="https://wiki.med.harvard.edu/Orchestra/InstalledApplications">research applications installed on Orchestra</a>. If you don't see a program you want, <a href="#support">just ask us</a>.
+	</p>
+
+	<p>The following licensed desktop research applications are distributed by research computing; <b>all downloads 
+	require <a href="https://ecommons.med.harvard.edu/">HMS eCommons ID authentication</a></b>. Please 
+	note that the <a href="https://affinity.med.harvard.edu/">HMS Affinity ID</a> and Harvard PIN will 
+	not work for this.</p>
+
+	<ul>
+	<li><b><a href="http://www.cambridgesoft.com/">ChemOffice</a></b> is a suite of chemistry tools available to all Quad-based faculty, staff, and students of HMS/HSDM, and licensed for use on or off the HMS network.
+	   [<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#ChemOffice">installation notes</a>]
+	</li>
+	<li><b><a href="http://www.flowjo.com/">FlowJo</a></b> is a software package for analyzing flow cytometry data. FlowJo is only licensed to specific departments within HMS.
+		[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#FlowJo">info</a>]
+	</li>
+	<li><b><a href="http://www.geneious.com/">Geneious</a></b> is a bioinformatics software platform that is licensed for use on the Harvard Medical School network.
+		[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#Geneious">installation notes</a>]
+	</li>
+	<li><b><a href="http://www.graphpad.com/scientific-software/prism/">GraphPad Prism</a></b> combines scientific graphing, comprehensive curve fitting (nonlinear regression), understandable statistics, and data organization.
+		[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#GraphPad_Prism">info</a>]
+	</li>
+	<li><b><a href="http://www.jmp.com/">JMP</a></b> is statistical discovery software that is licensed to all members and affiliates of Harvard Medical School.
+		[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#JMP">download page</a>]
+	</li>
+	<li><b><a href="http://www.jmp.com/">JMP Genomics</a></b>
+	 	[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#JMP_Genomics">info</a>] 
+	</li>
+	<li><b><a href="http://www.dnastar.com/">Lasergene</a></b> is a suite of sequence analysis software by DNAStar for Windows and Mac, with analysis tools including alignments, contig assembly, gene discovery, primer design, restriction mapping, protein structure prediction, and more. Lasergene is available for use only on the HMS network.
+		[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#Lasergene_DNAStar">download page</a>]
+	</li>
+	<li><b><a href="http://www.wolfram.com/">Mathematica</a></b> is licensed to all members and affiliates of Harvard University. Mathematica can also be run on the Orchestra HPC in addition to the desktop versions.
+		[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#Mathematica">download page</a>]
+	</li>
+	<li><b><a href="http://www.mathworks.com/">MATLAB</a></b> is available under a site license to all Quad-based faculty, staff, and students of HMS. Harvard FAS users <a href="http://www.fas-it.fas.harvard.edu/node/1228">can obtain MATLAB from FAS directly</a>. <b>Members of HMS affiliates, such as MGH, BIDMC, Children's Hospital, etc., should seek MATLAB licensing through their primary institution</b>. MATLAB can also be run on the Orchestra HPC in addition to the desktop versions.
+		[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#MATLAB">download page</a>]
+	</li>
+	</ul>
+
+	<p>See the <a href="https://wiki.med.harvard.edu/Software/">HMS Software Wiki</a> for links to other Harvard organizations with software licensing resources.
+	</p>
+
+      </div>
+    </div
+
+
+
+    <br /><hr /><br />
+
+
+
+    <!-- ABOUT AREA -->
+    <a name="about"></a>
+    <h1 class="section"><span class="glyphicon glyphicon-question-sign"></span> About</h1>
+
+	<br />
+
+    <div class="row">
+      <div class="col-6 col-sm-6 col-offset-3 col-sm-offset-3">
+	<b>Helping beginners and experts get research done on computers.</b>
 	<p>
 	Computational research is an increasingly important part of any life science research project. Research computing staff help researchers get access to software and hardware resources and provide advice on how to use those resources. Ask us big or small, beginner or expert questions.
 	</p>
@@ -480,390 +799,14 @@
 
 	<p>All services are offered <b>free of charge</b>.</p>
 
-	</div>
-	</div>
-	
-	<br />    
-    <br />
-    <div class="row">
-      <div class="col-2 col-sm-2 col-offset-1 col-sm-offset-1">
-      </div>
-      <div class="col-2 col-sm-2 col-lg-2">
-	<span class="choose">
-	<a class="btn btn-lg btn-success" href="#" data-toggle="modal" data-target="#form_support_div">Form</a>
-	<!-- pre javascript link -->
-	<!--<a class="btn btn-lg btn-success" href="support.html" target="_blank">Form</a>-->
-	</span>
-      </div>
-      <div class="col-2 col-sm-2 col-lg-2">
-	<span class="choose">
-        <a class="btn btn-lg btn-success" href="mailto:rchelp@hms.harvard.edu">E-mail</a>
-	</span>
-      </div>
-      <div class="col-2 col-sm-2 col-lg-2">
-	<span class="choose">
-        <a class="btn btn-lg btn-success" href="#contact">Visit</a>
-	</span>
-      </div>
-    </div>
-	
-	<br /><hr /><br />
-
-	<!-- STORAGE AREA -->
-    <a name="storage"></a>
-    <h1 class="section"><span class="glyphicon glyphicon-hdd"></span> Storage</h1>
 	<br />
-	
-	<!-- JS FORM -->
-
-	<!-- request storage -->
-	<div class="modal fade" id="form_storage_div" role="dialog" tabindex="-1">
-	  <div class="modal-dialog modal-lg">
-	    <div class="modal-content">
-	      <div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h4 class="modal-title">Request More Storage</h4>
-	      </div>
-	    <div class="modal-body">
-
-	<!-- form contents -->
-	<form id="form_storage_form" action="#" class="form-horizontal">
-
-        <div class='form-group'>
-          <label for='name' class='col-sm-2 control-label'>Name</label>
-          <div class='col-sm-5'>
-            <input name='form_storage_first_name' id='form_storage_first_name' type='text' class='form-control' placeholder='First Name'>
-	    <span class="glyphicon form-control-feedback"></span>
-          </div>
-          <div class='col-sm-5'>
-            <input name='form_storage_last_name' id='form_storage_last_name' type='text' class='form-control' placeholder='Last Name'>
-	    <span class="glyphicon form-control-feedback"></span>
-          </div>
-        </div>
-
-        <div class='form-group'>
-          <label for='ecommons' class='col-sm-2 control-label'>eCommons</label>
-          <div class='col-sm-10'>
-	          <input name='form_storage_ecommons' id='form_storage_ecommons' type='text' class='form-control' placeholder='eCommons ID (e.g. ab123. Not an email address or a Harvard ID.)'>
-		  <span class="glyphicon form-control-feedback"></span>
-          </div>
-        </div>
-
-        <div class='form-group'>
-          <label for='email' class='col-sm-2 control-label'>Harvard Email</label>
-          <div class='col-sm-10'>
-            <input name='form_storage_email' id='form_storage_email' type='text' class='form-control' placeholder='Your Harvard Email Address'>
-	    <span class="glyphicon form-control-feedback"></span>
-          </div>
-        </div>
-
-        <div class='form-group'>
-          <label for='group' class='col-sm-2 control-label'>Group</label>
-          <div class='col-sm-10'>
-            <input name='form_storage_group' id='form_storage_group' type='text' class='form-control' placeholder='Your Group, Lab, or Affiliated Organization'>
-	    <span class="glyphicon form-control-feedback"></span>
-          </div>
-        </div>
-
-        <div class='form-group'>
-          <label for='research' class='col-sm-2 control-label'>Storage Request</label>
-          <div class='col-sm-10'>
-            <textarea name='form_storage_xstorage' id='form_storage_xstorage' type='text' rows='5' class='form-control' placeholder='Please describe how much storage you would like.'></textarea>
-	    <span class="glyphicon form-control-feedback"></span>
-          </div>
-        </div>
-
-        <div class='form-group'>
-          <label for='xtrastorage-growth' class='col-sm-2 control-label'>Storage Growth</label>
-          <div class='col-sm-10'>
-            <textarea name='form_storage_xtrastorage-growth' id='form_storage_xtrastorage-growth' type='text' rows='5' class='form-control' placeholder='Please estimate the amount of data growth you would need to store on the Orchestra fileserver -- immediately, 6 months from now, and a year from now. Please consider only the data that would be needed to be directly accessible by the cluster and assume that you would remove data that is no longer needed.'></textarea>
-	    <span class="glyphicon form-control-feedback"></span>
-          </div>
-        </div>
-      </form>
-	<!-- end form contents -->
-
-	      </div>
-	      <div class="modal-footer">
-		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		<button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#form_ok" name="form_storage_submit" id="form_storage_submit">Submit</button>
-	      </div>
-
-	    </div>
-	  </div>
-	</div>
-	
-	<!-- end request storage -->
-	
-	<!-- END JS FORM -->
-
-      <div class="row">
-        <div class="col-6 col-sm-6 col-offset-3 col-sm-offset-3">
-
-          <p>The thousands of researchers we support generate a tremendous amount of data. Some of our group resources 
-		and time go towards evaluating future storage products for cost, performance, and suitability for our 
-		researchers. 
-	  </p>
-	  <p>We currently have several petabytes of network attached storage, between the various file servers.
-		Our latest addition is a Lustre based scratch filesystem, which has the potential to deliver very high read/write performance.
-		<a href="https://wiki.med.harvard.edu/Orchestra/FuturePlans" target="_blank">Read more about our expanding storage and future plans.</a>
-	  </p>
-	  </div>
-	  </div>
-	  <br />
-	<div class="row">
-	<div class="col-1 col-sm-1 col-lg-1"></div>
-	<div class="col-4 col-sm-4 col-sm-offset-3 col-lg-offset-3">
-	  <span class="choose">
-	<a class="btn btn-lg btn-success" href="#" data-toggle="modal" data-target="#form_storage_div">Request More Storage</a>
-	<!-- pre javascript link -->
-	<!--<a class="btn btn-lg btn-success" href="storage.html" target="_blank">Storage	</a>-->
-	</span>
-      </div>
-        </div>
-    
-    <br /> <hr /> <br />
-
-
-	<!-- USER TRAINING -->
-	<a name="utraining"></a>
-    
-    <h1 class="section"><span class="glyphicon glyphicon-book"></span> User Training</h1>
-    
-    <br />
-    
-     <div class="row">
-        <div class="col-6 col-sm-6 col-offset-3 col-sm-offset-3">
-    
-          <p>Members of our group are also pro-active in the Quad community and teach classes every semester and summer.  Courses include UNIX, introduction to using Orchestra, Perl/bioPerl, R/Bioconductor, RNAseq, and others.  Slides from classes will be posted when they are available.
-	 	 </p>
-	 	 <ul>
-	    <li>Next-generation Sequencing [<a href="training/NGS-20140813/">Slides</a>]</li>
-	    <li>BioPerl [<a href="training/perl/">Content</a>]</li>
-	  </ul>
-		</div>
-		</div>
-		<br />
-	<!--  User Training Button
-	<div class="row">
-	<div class="col-2 col-sm-2 col-lg-2"></div>
-	<div class="col-4 col-sm-4 col-sm-offset-2 col-lg-offset-2">
-	
-		<span class="choose">
-        <a class="btn btn-lg btn-success" href="https://wiki.med.harvard.edu/Orchestra/CLASSLINKHERE" target="_blank">Class Dates & Slides</a>
-	</span>
-	</div>
-	</div>
-	-->
-    <br /> <hr /> <br />
-	<!-- Cloud Computing -->
- 
-     <a name="cloud"></a>
-     
-     <h1 class="section"><span class="glyphicon glyphicon-globe"></span> Cloud Computing</h1>
-     
-     <br />
-    <div class="row">
-		<div class="col-6 col-sm-6 col-offset-3 col-sm-offset-3">
-		
-        <p>The computational resources needed by our community wax and wane with the academic year and the funding 
-		deadlines. We are looking towards the future and evaluating cloud computing as a possible solution to 
-		provide surge compute capacity during times of high need.
-	 	 </p>
-	  	</div>
-	  </div>
-	</div>
-
-    <br /><hr /><br />
-    <!-- DOWNLOADS AREA -->
-    <a name="downloads"></a>
-    <h1 class="section"><span class="glyphicon glyphicon-download-alt"></span> Downloads</h1>
-
-	<br />
-
-    <div class="row">
-      <div class="col-8 col-sm-8 col-lg-8 col-offset-2 col-sm-offset-2 col-lg-offset-2">
-	<p>We do have some code available through our <a href="https://github.com/hmsrc" target="_blank">Github</a>.</p>
-
-	<p>There are many <a href="https://wiki.med.harvard.edu/Orchestra/InstalledApplications" target="_blank">research applications installed on Orchestra</a>. If you don't see a program you want, <a href="#support">just ask us</a>.
-	</p>
-
-	<p>The following licensed desktop research applications are distributed by research computing; <b>all downloads 
-	require <a href="https://ecommons.med.harvard.edu/" target="_blank">HMS eCommons ID authentication</a></b>. Please 
-	note that the <a href="https://affinity.med.harvard.edu/" target="_blank">HMS Affinity ID</a> and Harvard PIN will 
-	not work for this.</p>
-
-	<ul>
-	<li><b><a href="http://www.cambridgesoft.com/" target="_blank">ChemOffice</a></b> is a suite of chemistry tools available to all Quad-based faculty, staff, and students of HMS/HSDM, and licensed for use on or off the HMS network.
-	   [<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#ChemOffice" target="_blank">installation notes</a>]
-	</li>
-	<li><b><a href="http://www.flowjo.com/">FlowJo</a></b> is a software package for analyzing flow cytometry data. FlowJo is only licensed to specific departments within HMS.
-		[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#FlowJo" target="_blank">info</a>]
-	</li>
-	<li><b><a href="http://www.geneious.com/" target="_blank">Geneious</a></b> is a bioinformatics software platform that is licensed for use on the Harvard Medical School network.
-		[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#Geneious" target="_blank">installation notes</a>]
-	</li>
-	<li><b><a href="http://www.graphpad.com/scientific-software/prism/" target="_blank">GraphPad Prism</a></b> combines scientific graphing, comprehensive curve fitting (nonlinear regression), understandable statistics, and data organization.
-		[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#GraphPad_Prism" target="_blank">info</a>]
-	</li>
-	<li><b><a href="http://www.jmp.com/" target="_blank">JMP</a></b> is statistical discovery software that is licensed to all members and affiliates of Harvard Medical School.
-		[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#JMP" target="_blank">download page</a>]
-	</li>
-	<li><b><a href="http://www.dnastar.com/" target="_blank">Lasergene</a></b> is a suite of sequence analysis software by DNAStar for Windows and Mac, with analysis tools including alignments, contig assembly, gene discovery, primer design, restriction mapping, protein structure prediction, and more. Lasergene is available for use only on the HMS network.
-		[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#Lasergene_DNAStar" target="_blank">download page</a>]
-	</li>
-	<li><b><a href="http://www.wolfram.com/">Mathematica</a></b> is licensed to all members and affiliates of Harvard University. Mathematica can also be run on the Orchestra HPC in addition to the desktop versions.
-		[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#Mathematica">download page</a>]
-	</li>
-	<li><b><a href="http://www.mathworks.com/" target="_blank">MATLAB</a></b> is available under a site license to all Quad-based faculty, staff, and students of HMS. Harvard FAS users <a href="http://www.fas-it.fas.harvard.edu/node/1228">can obtain MATLAB from FAS directly</a>. <b>Members of HMS affiliates, such as MGH, BIDMC, Children's Hospital, etc., should seek MATLAB licensing through their primary institution</b>. MATLAB can also be run on the Orchestra HPC in addition to the desktop versions.
-		[<a href="https://wiki.med.harvard.edu/Software/ResearchApplicationDownloads#MATLAB" target="_blank">download page</a>]
-	</li>
-	</ul>
-
-	<p>See the <a href="https://wiki.med.harvard.edu/Software/" target="_blank">HMS Software Wiki</a> for links to other Harvard organizations with software licensing resources.
-	</p>
-
-      </div>
-    </div>
-
-
-
-    <br /><hr /><br />
-
-
-
-    <!-- PEOPLE AREA -->
-    <a name="people" class="panel"></a>
-    <h1 class="section" id="target_people"><span class="glyphicon glyphicon-user"></span> People</h1>
-
-	<br />
-	 
-      <div class="row">
-        <div class="col-6 col-sm-4 col-lg-4">
-		<img src="img/andy.jpg" class="profile img-circle" />
-		<h4>Andy Bergman</h4>
-		<i>Research Systems Administrator</i>
-		<p>I help support the HMS user community to better use our HPC, web hosting, and software licensing services. </p>
-        </div>
-      
-         <div class="col-6 col-sm-4 col-lg-4">
-		<img src="img/chris.gif" class="profile img-circle" />
-                <h4>Chris Botka</h4>
-				<i>Director of Research Computing</i>
-                <p>I strategically visualize things. Ask me about the future of Orchestra. Suggestions welcome.</p>
-		</div> 
-	 	<div class="col-6 col-sm-4 col-lg-4">
-                <img src="img/tom.jpg" class="profile img-circle" />
-                <h4>Tom Chittenden</h4>
-                <i>Senior Biostatistics &amp Mathematical Biology Consultant</i>
-                <p>I develop mathematical and statistical models to further understanding of complex biological systems.</p>
-        </div>
-    </div>
-	<div class="row">
-			
-		<div class="col-6 col-sm-4 col-lg-4">
-			<img src="img/ld.jpg" class="profile img-circle" />
-                <h4>Lingsheng Dong</h4>
-		<i>Senior Research Computing Consultant</i>
-                <p>Helping biomedical researchers with their computational needs. Any feedback is welcomed.</p>
-        </div>
-        
-        <div class="col-6 col-sm-4 col-lg-4">		
-		<img src="img/doug.png" class="profile img-circle" />
-                <h4>Doug Feldmann</h4>
-		<i>Senior Research Systems Architect</i>
-                <p>Doug's focus is on the web-hosting service and base infrastructure of the Orchestra cluster.</p>
-        </div>  
-        
-        <div class="col-6 col-sm-4 col-lg-4">
-                <img src="img/david.jpg" class="profile img-circle" />
-                <h4>David Hummel</h4>
-                <i>Senior DevOps Engineer</i>
-                <p>Previously worked as a molecular biologist, bioinformatician and software developer. Now designs scalable and maintainable research computing infrastructure, both physical and virtual.</p>
-        </div>
-        </div>
-        <br />
-        <div class="row">
-        <div class="col-6 col-sm-4 col-lg-4">
-			<img src="img/amir.png" class="profile img-circle" />
-                <h4>Amir Karger</h4>
-                <i>Senior Research Computing Consultant</i>
-		<p>I love talking to scientists about their research and helping catalyze their way over the computational barriers. "perl" is one of my favorite verbs. </p>
-        </div>
-           <div class="col-6 col-sm-4 col-lg-4">
-		<img src="img/bd.jpg" class="profile img-circle" />
-                <h4>Byoung-Do (BD) Kim</h4>
-		<i>Associate Director of Research Computing</i>
-                <p>Enabling Scientific Breakthroughs at Scales with High Performance Computing.</p>
-        </div>
-        <div class="col-6 col-sm-4 col-lg-4">
-		<img src="img/nam.jpg" class="profile img-circle" />
-                <h4>Nam Pho</h4>
-		<i>Research Computing Consultant</i>
-
-		<!-- array of contact methods
-		<div class="contact" style="padding-top: 5px; margin-right: 10px; padding-bottom: 5px;">
-		  <a href="mailto:nam_pho@hms.harvard.edu"><span class="icon-envelope-alt icon-large"></span></a>
-		  <a href="https://www.linkedin.com/in/nampho/"><span class="icon-linkedin icon-large"></span></a>
-		  <a href="https://www.facebook.com/nampho2/"><span class="icon-facebook icon-large"></span></a>
-		  <a href="https://twitter.com/nampho2/"><span class="icon-twitter icon-large"></span></a>
-		  <a href="https://github.com/nampho2/"><span class="icon-github-alt icon-large"></span></a>
-		  <a href="https://plus.google.com/u/0/+NamPho/"><span class="icon-google-plus icon-large"></span></a>
-		  <a href="http://www.nampho.tk/atom.xml"><i class="icon-rss icon-large"></i></a>
-		</div>
-		-->
-
-                <p>
-		  <a href="https://twitter.com/search?q=%23bigdata">#bigdata</a>
-		  <a href="https://twitter.com/search?q=%23science">#science</a>
-		  <a href="https://twitter.com/search?q=%23hpc">#hpc</a>
-		  <a href="https://twitter.com/search?q=%23bioinformatics">#bioinformatics</a>
-		</p>
-        </div>
-        
-        </div>
- 
-        <br/>
-        
-        <div class="row">
-      
-        
-        <div class="col-6 col-sm-4 col-lg-4">
-		<img src="img/you.jpg" class="profile img-circle" />
-                <h4>Current Opening</h4>
-		<i>DevOps Engineer #1</i>
-                <p>We have an exciting position open to do some automation of systems administration for HPC.</p>
-        </div>
-        <div class="col-6 col-sm-4 col-lg-4">
-		<img src="img/you.jpg" class="profile img-circle" />
-                <h4>Current Opening</h4>
-		<i>DevOps Engineer #2</i>
-                <p>We have an exciting position open to do some automation of systems administration for HPC. Any parallel file system experience is a plus.</p>
-        </div>
-      <div class="col-6 col-sm-4 col-lg-4">
-		<img src="img/you.jpg" class="profile img-circle" />
-                <h4>Current Opening</h4>
-		<i>Senior Research Computing Consultant</i>
-                <p>An exciting position has opened up in our group, please read more details and apply <a href="http://hmsrc.me/SrRCC">hmsrc.me/SrRCC</a>.</p>
-        </div>
- 		</div>
-      <br /><hr /><br />
-
-    <!-- ABOUT AREA -->
-    <a name="about"></a>
-    <h1 class="section"><span class="glyphicon glyphicon-question-sign"></span> About</h1>
-
-	<br />
-
-    <div class="row">
-      <div class="col-6 col-sm-6 col-offset-3 col-sm-offset-3">
 
 	<h4 class="section"><span class="glyphicon glyphicon-music"></span> Orchestra <span class="glyphicon glyphicon-music"></span></h4>
 	<p>
 	Orchestra is a shared high-performance computing (HPC) environment maintained by our group. It has over 
 	5000 compute cores and several Petabytes of network attached storage. Although it was originally designed to 
 	enable computationally intensive bioinformatics research, it has evolved to support other IT solutions including web 
-	hosting. You can <a href="https://wiki.med.harvard.edu/Orchestra/TechnicalSpecifications" target="_blank">read more about the Orchestra hardware here</a>.
+	hosting. You can <a href="https://wiki.med.harvard.edu/Orchestra/TechnicalSpecifications">read more about the Orchestra hardware here</a>.
 	</p>
 
 	<br />
@@ -883,7 +826,6 @@
     </div>
 
     <br /><hr /><br />
-    
 
     <!-- CONTACT AREA -->
     <a name="contact"></a>
@@ -894,15 +836,15 @@
     <div class="row">
       <div class="col-6 col-sm-6 col-lg-6">
 	<p>
-	<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=25+Shattuck+Street,+Boston,+MA&amp;aq=0&amp;oq=25+shattuck&amp;sll=42.31435,-70.970284&amp;sspn=0.319372,0.727158&amp;ie=UTF8&amp;hq=&amp;hnear=25+Shattuck+St,+Boston,+Suffolk,+Massachusetts+02115&amp;t=m&amp;z=14&amp;ll=42.335509,-71.104369&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=25+Shattuck+Street,+Boston,+MA&amp;aq=0&amp;oq=25+shattuck&amp;sll=42.31435,-70.970284&amp;sspn=0.319372,0.727158&amp;ie=UTF8&amp;hq=&amp;hnear=25+Shattuck+St,+Boston,+Suffolk,+Massachusetts+02115&amp;t=m&amp;z=14&amp;ll=42.335509,-71.104369" style="color:#0000FF;text-align:left;" target="_blank">View Larger Map</a></small>
+	<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=25+Shattuck+Street,+Boston,+MA&amp;aq=0&amp;oq=25+shattuck&amp;sll=42.31435,-70.970284&amp;sspn=0.319372,0.727158&amp;ie=UTF8&amp;hq=&amp;hnear=25+Shattuck+St,+Boston,+Suffolk,+Massachusetts+02115&amp;t=m&amp;z=14&amp;ll=42.335509,-71.104369&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=25+Shattuck+Street,+Boston,+MA&amp;aq=0&amp;oq=25+shattuck&amp;sll=42.31435,-70.970284&amp;sspn=0.319372,0.727158&amp;ie=UTF8&amp;hq=&amp;hnear=25+Shattuck+St,+Boston,+Suffolk,+Massachusetts+02115&amp;t=m&amp;z=14&amp;ll=42.335509,-71.104369" style="color:#0000FF;text-align:left;">View Larger Map</a></small>
 	</p>
       </div>
 
       <div class="col-6 col-sm-6 col-lg-6">
 	<p>
 	You are more than welcome to visit us at the following address at any time. However, we may not always 
-	be there so it's best to send us an e-mail to confirm first. We do have weekly <b>Office Hours on Wednesdays 
-	from 1-3pm.</b> Stop by to chat about anything, or bring your data and questions.
+	be there so it's best to send us an e-mail to confirm first. We do have weekly office hours on Wednesdays 
+	from 1-3pm. Stop by to chat about anything, or bring your data and questions.
 
         <address>
           HMS Research Computing<br />
@@ -914,15 +856,14 @@
         </address>
 
 	We also have a fledgling online social presence on 
-		<a href="https://twitter.com/hms_rc" target="_blank">Twitter</a>, 
-		<a href="https://www.facebook.com/HMSResearchComputing" target="_blank">Facebook</a>, and 
-		<a href="https://github.com/hmsrc" target="_blank">Github</a>.
+		<a href="https://twitter.com/hms_rc">Twitter</a>, 
+		<a href="https://www.facebook.com/HMSResearchComputing">Facebook</a>, and 
+		<a href="https://github.com/hmsrc">Github</a>.
 	</p>
       </div>
     </div>
 
     <!-- FOOTER AREA -->
-    <div class="container">
     <div class="row" style="background: #d7e2ea;">
       <br />
 
@@ -952,12 +893,12 @@
 	<strong><span class="glyphicon glyphicon-link"></span> Links</strong>
 
 	<p>	
-	  <a href="http://hms.harvard.edu" target="_blank">Harvard Medical School</a> <br />
-	  <a href="http://rc.hms.harvard.edu" target="_blank">- Research Computing</a> <br />
-	  <a href="http://genome.med.harvard.edu" target="_blank">- Biopolymer Sequencing (BPF)</a> <br />
-	  <a href="http://idac.hms.harvard.edu" target="_blank">- Image Data Analysis Core (IDAC)</a> <br />
-	  <a href="http://www.sbgrid.org" target="_blank">- Structural Biology Grid (SBGrid)</a> <br />
-	  <a href="http://iccb.med.harvard.edu" target="_blank">- ICCB Screening</a> <br />
+	  <a href="http://hms.harvard.edu">Harvard Medical School</a> <br />
+	  <a href="http://rc.hms.harvard.edu">- Research Computing</a> <br />
+	  <a href="http://genome.med.harvard.edu">- Biopolymer Sequencing (BPF)</a> <br />
+	  <a href="http://idac.hms.harvard.edu">- Image Data Analysis Core (IDAC)</a> <br />
+	  <a href="http://www.sbgrid.org">- Structural Biology Grid (SBGrid)</a> <br />
+	  <a href="http://iccb.med.harvard.edu">- ICCB Screening</a> <br />
 	</p>
 	</div>
     </div>
@@ -968,7 +909,7 @@
       </div>
     </div> <!-- /row container -->
 
-  </div><!-- /container -->
+  </div> <!-- /container -->
 
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
