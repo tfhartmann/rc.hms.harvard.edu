@@ -9,7 +9,7 @@ $(document).ready(function(){
     $('.carousel').carousel();
 
     console.log("hello jQuery world");
-
+/*
     $(window).bind('scroll', function() {
         if ($(window).scrollTop() > 125) {
             $('.navbar').addClass('fixed');
@@ -18,7 +18,7 @@ $(document).ready(function(){
             $('.navbar').removeClass('fixed');
         }
     });
-
+*/
     // all client side form checks below
     $('input[type=text][class=form-control]').keyup(notBlank);
     $('textarea').keyup(notBlank);

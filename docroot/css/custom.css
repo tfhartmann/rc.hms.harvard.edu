@@ -1,11 +1,14 @@
 /*
 custom.css - extra css fixins
 */
+
+/*
 .fixed {
                 position: fixed;
                 top: 0px;
                 z-index: 100;
 }
+*/
 
 .navbar {
                 background: #eee;
