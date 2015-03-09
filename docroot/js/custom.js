@@ -72,21 +72,35 @@ $(function() {
 
 $(function() {
     $('button#form_storage_submit').click(function() {
-        // validate form first        
-        console.log("the storage submit button works");
+        // validate form first
+        var item1 = document.getElementById('form_storage_first_name').value;
+        var item2 = document.getElementById('form_storage_last_name').value;
+        var item3 = document.getElementById('form_storage_ecommons').value;
+        var item4 = document.getElementById('form_storage_email').value;
+        var item5 = document.getElementById('form_storage_group').value;
+        var item6 = document.getElementById('form_storage_pi').value;
+        var item7 = document.getElementById('form_storage_xstorage').value;
+        var item8 = document.getElementById('form_storage_xtrastorage').value;
 
-        if (1) {
-          // now send using ajax  
-            $.ajax({
-		type: 'POST',
-		url: '/form.php',
-		data: $('#form_storage_form').serialize(),
-		success: function(resp) {
-                    $('#form_storage_div').modal('hide');
-                    $('#form_ok').modal('show');
-                    console.log(resp);
-		}
-            });
+        var itemlist = [item1, item2, item3, item4, item5, item6, item7, item8]
+
+        for(i = 0, i < itemlist.length, i++) {
+            if (itemlist[i] == "") {
+                document.getElementById('form_storage_form').reset();
+
+            } else {
+              // now send using ajax  
+                $.ajax({
+            		type: 'POST',
+            		url: '/form.php',
+            		data: $('#form_storage_form').serialize(),
+            		success: function(resp) {
+                                $('#form_storage_div').modal('hide');
+                                $('#form_ok').modal('show');
+                                console.log(resp);
+        		                }
+                });
+            }
         }
     });
 });
