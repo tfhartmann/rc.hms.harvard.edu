@@ -125,7 +125,7 @@ if (isset($_POST['form_storage_email'])) {
 
   $group = strip_tags($_POST['form_storage_group']);
   $prinv = strip_tags($_POST['form_storage_pi']);
-  $storage_request = strip_tags($_POST['form_storage_xtrastorage']);
+  $storage_request = strip_tags($_POST['form_storage_xstorage']);
   $storage_growth = strip_tags($_POST['form_storage_xtrastorage-growth']);
 
 
