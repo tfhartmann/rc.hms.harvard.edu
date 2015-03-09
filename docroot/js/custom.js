@@ -87,6 +87,7 @@ $(function() {
         for(i = 0; i < itemlist.length; i++) {
             if (itemlist[i] == "") {
                 document.getElementById('form_storage_form').reset();
+                return false;
 
             } else {
               // now send using ajax  
