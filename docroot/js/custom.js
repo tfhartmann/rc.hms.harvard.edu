@@ -84,7 +84,7 @@ $(function() {
 
         var itemlist = [item1, item2, item3, item4, item5, item6, item7, item8]
 
-        for(i = 0, i < itemlist.length, i++) {
+        for(i = 0; i < itemlist.length; i++) {
             if (itemlist[i] == "") {
                 document.getElementById('form_storage_form').reset();
 
