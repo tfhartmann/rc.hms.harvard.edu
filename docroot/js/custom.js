@@ -80,7 +80,7 @@ $(function() {
         var item5 = document.getElementById('form_storage_group').value;
         var item6 = document.getElementById('form_storage_pi').value;
         var item7 = document.getElementById('form_storage_xstorage').value;
-        var item8 = document.getElementById('form_storage_xtrastorage').value;
+        var item8 = document.getElementById('form_storage_xtrastorage-growth').value;
 
         var itemlist = [item1, item2, item3, item4, item5, item6, item7, item8]
 
