@@ -52,21 +52,34 @@ $(function() {
 $(function() {
     $('button#form_register_submit').click(function() {
         // validate form first
-        console.log("the register submit button works");
+        var item1 = document.getElementById('form_register_first_name').value;
+        var item2 = document.getElementById('form_register_last_name').value;
+        var item3 = document.getElementById('form_register_ecommons').value;
+        var item4 = document.getElementById('form_register_email').value;
+        var item5 = document.getElementById('form_register_group').value;
 
-	if (1) {
-	  // now send using ajax
-	  $.ajax({
-	    type: 'POST',
-            url: '/form.php',
-            data: $('#form_register_form').serialize(),
-            success: function(resp) {
-		$('#form_register_div').modal('hide');
-		$('#form_ok').modal('show');
-		console.log(resp);
+        var itemlist = [item1, item2, item3, item4, item5]
+
+        for(i = 0; i < itemlist.length; i++) {
+            if (itemlist[i] == "") {
+                document.getElementById('form_storage_form').reset();
+                return false;
+            } else {
+        //console.log("the register submit button works");
+	          // now send using ajax
+            	$.ajax({
+            	    type: 'POST',
+                        url: '/form.php',
+                        data: $('#form_register_form').serialize(),
+                        success: function(resp) {
+                                    $('#form_register_div').modal('hide');
+                                    $('#form_ok').modal('show');
+                                    console.log(resp);
+                                    }
+                });
+                break
             }
-          });
-	}
+        }
     });
 });
 
