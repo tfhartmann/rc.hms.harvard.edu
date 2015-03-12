@@ -66,22 +66,21 @@ $(function() {
             if (itemlist[i] == "") {
                 document.getElementById('form_register_form').reset();
                 return false;
-            } else {
-        //console.log("the register submit button works");
-	          // now send using ajax
-            	$.ajax({
-            	    type: 'POST',
-                        url: '/form.php',
-                        data: $('#form_register_form').serialize(),
-                        success: function(resp) {
-                                    $('#form_register_div').modal('hide');
-                                    $('#form_ok').modal('show');
-                                    console.log(resp);
-                                    }
-                });
-                break
             }
         }
+
+        console.log("the register submit button works");
+	    // if form is fine, send using ajax
+        $.ajax({
+            type: 'POST',
+                url: '/form.php',
+                data: $('#form_register_form').serialize(),
+                success: function(resp) {
+                            $('#form_register_div').modal('hide');
+                            $('#form_ok').modal('show');
+                            console.log(resp);
+                            }
+                });            
     });
 });
 
@@ -103,22 +102,21 @@ $(function() {
             if (itemlist[i] == "") {
                 document.getElementById('form_storage_form').reset();
                 return false;
-
-            } else {
-              // now send using ajax  
-                $.ajax({
-            		type: 'POST',
-            		url: '/form.php',
-            		data: $('#form_storage_form').serialize(),
-            		success: function(resp) {
-                                $('#form_storage_div').modal('hide');
-                                $('#form_ok').modal('show');
-                                console.log(resp);
-        		                }
-                });
-                break
             }
         }
+
+        // if form is fine, send using ajax  
+        $.ajax({
+        	type: 'POST',
+        	url: '/form.php',
+        	data: $('#form_storage_form').serialize(),
+        	success: function(resp) {
+                        $('#form_storage_div').modal('hide');
+                        $('#form_ok').modal('show');
+                        console.log(resp);
+                        }
+                });
+               
     });
 });
 
