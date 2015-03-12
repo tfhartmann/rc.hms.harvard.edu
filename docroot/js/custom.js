@@ -24,8 +24,10 @@ $(document).ready(function(){
     $('textarea').keyup(notBlank);
 
     $('#form_register_ecommons').keyup(validateEC);
+    $('#form_storage_ecommons').keyup(validateEC);
     $('input[name=form_support_email]').keyup(validateEmail);
     $('input[name=form_register_email]').keyup(validateEmail);
+    $('input[name=form_storage_email]').keyup(validateEmail);
 });
 
 $(function() {
@@ -62,7 +64,7 @@ $(function() {
 
         for(i = 0; i < itemlist.length; i++) {
             if (itemlist[i] == "") {
-                document.getElementById('form_storage_form').reset();
+                document.getElementById('form_register_form').reset();
                 return false;
             } else {
         //console.log("the register submit button works");
