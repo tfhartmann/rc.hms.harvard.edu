@@ -64,7 +64,7 @@ $(function() {
 
         for(i = 0; i < itemlist.length; i++) {
             if (itemlist[i] == "") {
-                document.getElementById('form_register_form').reset();
+                //document.getElementById('form_register_form').reset();
                 return false;
             }
         }
@@ -100,7 +100,7 @@ $(function() {
 
         for(i = 0; i < itemlist.length; i++) {
             if (itemlist[i] == "") {
-                document.getElementById('form_storage_form').reset();
+                //document.getElementById('form_storage_form').reset();
                 return false;
             }
         }
