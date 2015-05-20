@@ -76,7 +76,7 @@ Requestor's contact information:
 
         $first_name $last_name <$email>
         Affiliation:\t\t$affiliation
-        Group (and affiliation if "other" above):\t\t$group
+        Group (and affiliation if \"other\" above):\t\t$group
 -------------------------------------------------------------------------------
 
 eCommons ID: $ecommons
