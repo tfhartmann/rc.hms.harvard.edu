@@ -255,9 +255,24 @@ Visit our <a href="./news.html">News Page</a> for current events.
 
         <div class='form-group'>
           <label for='group' class='col-sm-2 control-label'>Group<font color="red">*</font></label>
-          <div class='col-sm-10'>
-            <input name='form_register_group' id='form_register_group' type='text' class='form-control' required placeholder='PI name, Lab, and/or Affiliated Organization. No group directory will be created/attributed if not provided.'>
-	    <span class="glyphicon form-control-feedback"></span>
+          <div class='col-sm-5'>
+            <select name='form_register_affiliation' id='form_register_affiliation' class='form-control' required>
+              <option>HMS - Harvard Medical School</option>
+              <option>HSDM - Harvard School of Dental Medicine</option>
+              <option>BCH - Boston Children's Hospital</option>
+              <option>BIDMC - Beth Israel Deaconess Medical Center</option>
+              <option>BWH - Brigham and Women's Hospital</option>
+              <option>DFCI - Dana Farber Cancer Institute</option>
+              <option>JDC - Joslin Diabetes Center</option>
+              <option>MEEI - Massachusetts Eye and Ear Infirmary</option>
+              <option>MGH - Massachusetts General Hospital</option>
+              <option>Other</option>
+            </select> 
+        <span class="glyphicon form-control-feedback"></span>
+          </div>
+          <div class='col-sm-5'>
+            <input name='form_register_group' id='form_register_group' type='text' class='form-control' required placeholder='PI name, Lab, Affiliation if "Other".'>
+      <span class="glyphicon form-control-feedback"></span>
           </div>
         </div>
 
@@ -918,8 +933,8 @@ Visit our <a href="./news.html">News Page</a> for current events.
 
     <!-- OTHER HMS RESOURCES AREA -->
     <a name="resources"></a>
-    <h1 class="section"><span class="glyphicons glyphicon-plane"></span>Resources</h1>
-
+    <h1 class="section"><span class="glyphicon glyphicon-plane"></span>Resources</h1>
+    <p>Research Computing works together closely with a number of other organizations in order to provide the most complete research experience possible.</p>
     <br />
 
     <div class="row">
