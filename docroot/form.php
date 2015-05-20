@@ -62,6 +62,7 @@ if (isset($_POST['form_register_email'])) {
   $last_name = strip_tags($_POST['form_register_last_name']);
   $ecommons = strip_tags($_POST['form_register_ecommons']);
   $subject = "New Orchestra HPC user: ".$first_name." ".$last_name." (".$ecommons.")";
+  $affiliation = strip_tags($_POST['form_register_affiliation']);
   $group = strip_tags($_POST['form_register_group']);
   $research = strip_tags($_POST['form_register_research']);
   $storage = strip_tags($_POST['form_register_storage']);
@@ -74,7 +75,8 @@ if (isset($_POST['form_register_email'])) {
 Requestor's contact information:
 
         $first_name $last_name <$email>
-        Group:\t\t$group
+        Affiliation:\t\t$affiliation
+        Group (and affiliation if "other" above):\t\t$group
 -------------------------------------------------------------------------------
 
 eCommons ID: $ecommons
