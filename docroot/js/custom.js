@@ -61,7 +61,7 @@ $(function() {
         var item5 = document.getElementById('form_register_group').value;
         var item6 = document.getElementById('form_register_affiliation').value;
 
-        var itemlist = [item1, item2, item3, item4, item5]
+        var itemlist = [item1, item2, item3, item4, item5, item6]
 
         for(i = 0; i < itemlist.length; i++) {
             if (itemlist[i] == "") {
