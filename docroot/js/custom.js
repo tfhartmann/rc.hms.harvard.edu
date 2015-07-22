@@ -58,8 +58,8 @@ $(function() {
         var item2 = document.getElementById('form_register_last_name').value;
         var item3 = document.getElementById('form_register_ecommons').value;
         var item4 = document.getElementById('form_register_email').value;
-        var item5 = document.getElementById('form_register_group').value;
-        var item6 = document.getElementById('form_register_affiliation').value;
+        var item5 = document.getElementById('form_register_institution').value;
+        var item6 = document.getElementById('form_register_group').value;
 
         var itemlist = [item1, item2, item3, item4, item5, item6]
 
